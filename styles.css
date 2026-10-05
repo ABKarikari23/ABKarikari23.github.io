@@ -259,6 +259,18 @@ body {
   margin-right: 0.4rem;
 }
 
+.card-note {
+  color: var(--muted);
+  font-size: 0.85rem;
+  font-style: italic;
+}
+
+.card-note.demo-soon {
+  color: var(--gold);
+  font-style: normal;
+  font-weight: 600;
+}
+
 /* Skills */
 .skill-list {
   list-style: none;
