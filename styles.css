@@ -237,6 +237,12 @@ body {
   color: var(--muted);
 }
 
+.card-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 1.2rem;
+}
+
 .card-link {
   color: var(--gold);
   text-decoration: none;
@@ -245,6 +251,13 @@ body {
 }
 
 .card-link:hover { text-decoration: underline; }
+
+.card-link.live::before {
+  content: "●";
+  color: #4caf7d;
+  font-size: 0.7rem;
+  margin-right: 0.4rem;
+}
 
 /* Skills */
 .skill-list {
