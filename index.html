@@ -3,12 +3,182 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Abraham Nana Kofi Karikari — Python developer and AI engineer in Ghana, author of the AI Agents with Python 2026 series." />
-  <title>Abraham Nana Kofi Karikari — Python & AI Engineer</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="stylesheet" href="styles.css?v=3" />
+  <meta name="theme-color" content="#0f172a" />
+  <meta name="color-scheme" content="dark light" />
+  <title>Abraham Karikari | Python &amp; AI Engineer in Ghana | AI Automation &amp; Backend Development</title>
+  <meta name="description" content="Abraham Karikari is a Python & AI engineer in Ghana building AI agents, business automation, backend systems and practical software solutions for businesses." />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  <meta name="author" content="Abraham Nana Kofi Karikari" />
+  <meta name="keywords" content="Python developer Ghana, AI engineer Ghana, AI automation Ghana, AI agents, Python backend development, business automation, software development Ghana, IT infrastructure, broadcast engineering" />
+  <link rel="canonical" href="https://abkarikari23.github.io/" />
+
+  <!-- Search and social sharing metadata -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="ABKarikari23" />
+  <meta property="og:title" content="Abraham Karikari | Python &amp; AI Engineer in Ghana" />
+  <meta property="og:description" content="AI automation, Python backend development, business software and technical solutions for businesses and teams." />
+  <meta property="og:url" content="https://abkarikari23.github.io/" />
+  <meta property="og:image" content="https://abkarikari23.github.io/og-image.png" />
+  <meta property="og:image:alt" content="Abraham Karikari — Python and AI Engineer in Ghana" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Abraham Karikari | Python &amp; AI Engineer in Ghana" />
+  <meta name="twitter:description" content="AI automation, Python backend development, business software and technical solutions." />
+  <meta name="twitter:image" content="https://abkarikari23.github.io/og-image.png" />
+  <link rel="author" href="https://www.linkedin.com/in/abkarikari23/" />
+
+  <!-- Simple favicon, no extra file needed. -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230f172a'/%3E%3Ctext x='32' y='42' font-family='Arial,sans-serif' font-size='28' font-weight='700' text-anchor='middle' fill='%23ffffff'%3EAB%3C/text%3E%3C/svg%3E" />
+
+  <link rel="stylesheet" href="styles.css?v=4" />
+  <link rel="sitemap" type="application/xml" href="sitemap.xml" />
+
+  <!-- Small additions for the new elements. The rest of the look still comes from styles.css. -->
+  <style>
+    .skip-link { position: absolute; left: -9999px; top: 0; padding: .6rem 1rem; background: #fff; color: #000; z-index: 1000; }
+    .skip-link:focus { left: 1rem; top: 1rem; }
+    .hero-sub { margin-top: .75rem; max-width: 60ch; opacity: .85; }
+    .availability { margin-top: 1.25rem; font-size: .95rem; opacity: .9; }
+    .project-status { margin: .5rem 0 0; font-size: .9rem; opacity: .8; }
+    .skill-groups { display: grid; gap: 1.5rem; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+    .skill-groups h3 { margin: 0 0 .6rem; font-size: 1rem; }
+    .writing-intro, .writing-schedule { max-width: 65ch; }
+    .writing-schedule { margin-top: 1.25rem; opacity: .85; font-size: .95rem; }
+    :focus-visible { outline: 2px solid currentColor; outline-offset: 3px; }
+
+    .section-intro { max-width: 70ch; margin-top: -.35rem; opacity: .85; }
+    .service-cta { margin-top: 1.5rem; }
+    .about-highlight {
+      margin-top: 1.5rem;
+      padding: 1rem 1.2rem;
+      border-left: 3px solid currentColor;
+      background: rgba(127,127,127,.08);
+      border-radius: .5rem;
+    }
+    .faq-list { display: grid; gap: .75rem; max-width: 800px; }
+    .faq-list details {
+      padding: 1rem 1.15rem;
+      border: 1px solid rgba(127,127,127,.22);
+      border-radius: .65rem;
+    }
+    .faq-list summary { cursor: pointer; font-weight: 700; }
+    .faq-list p { margin: .75rem 0 0; opacity: .85; }
+    .contact-primary { border-width: 2px; }
+    .business-cta { text-align: center; padding-top: 2rem; padding-bottom: 3rem; }
+    .business-cta p { max-width: 60ch; margin: 0 auto 1.25rem; opacity: .85; }
+
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Person",
+        "@id": "https://abkarikari23.github.io/#person",
+        "name": "Abraham Nana Kofi Karikari",
+        "url": "https://abkarikari23.github.io/",
+        "jobTitle": "Python & AI Engineer",
+        "description": "Python and AI engineer based in Ghana specializing in AI agents, business automation, backend development and technical solutions.",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Accra",
+          "addressCountry": "GH"
+        },
+        "knowsAbout": [
+          "Python",
+          "Artificial Intelligence",
+          "AI Agents",
+          "LLM Applications",
+          "Retrieval-Augmented Generation",
+          "Workflow Automation",
+          "Backend Development",
+          "IT Infrastructure",
+          "Cybersecurity",
+          "Broadcast Engineering"
+        ],
+        "sameAs": [
+          "https://github.com/ABKarikari23",
+          "https://www.linkedin.com/in/abkarikari23/",
+          "https://abkarikari23.tech/"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://abkarikari23.github.io/#website",
+        "url": "https://abkarikari23.github.io/",
+        "name": "ABKarikari23",
+        "description": "Portfolio of Abraham Nana Kofi Karikari — Python & AI Engineer in Ghana.",
+        "publisher": {
+          "@id": "https://abkarikari23.github.io/#person"
+        }
+      },
+      {
+        "@type": "ProfessionalService",
+        "@id": "https://abkarikari23.github.io/#service",
+        "name": "ABKarikari23 — Python & AI Engineering",
+        "url": "https://abkarikari23.github.io/",
+        "description": "Python development, AI automation, AI agent development, backend systems and technical solutions.",
+        "areaServed": [
+          {
+            "@type": "Country",
+            "name": "Ghana"
+          },
+          {
+            "@type": "Place",
+            "name": "Remote"
+          }
+        ],
+        "provider": {
+          "@id": "https://abkarikari23.github.io/#person"
+        },
+        "serviceType": [
+          "AI Automation",
+          "AI Agent Development",
+          "Python Backend Development",
+          "Business Software Development",
+          "Technical Consulting"
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What kind of projects do you take on?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "I work on AI automation, AI agent applications, Python backend systems, business software and selected IT or broadcast technology projects."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can you work with businesses outside Ghana?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. I am available for remote projects and technical opportunities while being based in Ghana."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I start a project?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Send a short description of the problem, your desired outcome and any relevant deadline. WhatsApp is the fastest way to start the conversation."
+        }
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
+  <a class="skip-link" href="#top">Skip to content</a>
+
   <header class="site-header">
     <nav class="nav container" aria-label="Main navigation">
       <a class="brand" href="#top">AB<span>Karikari23</span></a>
@@ -20,7 +190,8 @@
         <li><a href="#projects">Projects</a></li>
         <li><a href="#skills">Skills</a></li>
         <li><a href="#writing">Writing</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="#faq">FAQ</a></li>
+         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
   </header>
@@ -28,17 +199,24 @@
   <main id="top">
     <!-- Hero -->
     <section class="hero container">
-      <p class="hero-kicker">Ghana · Python · AI · Broadcasting</p>
+      <p class="hero-kicker">Ghana · Python · AI · Automation · Software</p>
       <h1>Abraham Nana Kofi <span class="accent">Karikari</span></h1>
       <p class="hero-tagline">
-        Python developer, IT professional, AI enthusiast, broadcast technician,
-        cybersecurity advocate, technical writer, and digital evangelist from Ghana.
-        I break down complex technology into practical insights — one article at a time.
+        I build <strong>AI-powered software, automation and Python backends</strong> that help businesses
+        reduce repetitive work, improve operations and turn ideas into working products.
+      </p>
+      <p class="hero-sub">
+        Python &amp; AI engineer in Ghana with experience across software engineering,
+        AI agents, IT infrastructure and broadcast technology. Available for freelance projects,
+        technical consulting and remote opportunities.
       </p>
       <div class="hero-actions">
-        <a class="btn btn-primary" href="#projects">View my work</a>
-        <a class="btn btn-ghost" href="https://github.com/ABKarikari23" target="_blank" rel="noopener">GitHub</a>
+        <a class="btn btn-primary" href="#contact">Start a project</a>
+        <a class="btn btn-ghost" href="#services">See services</a>
+        <a class="btn btn-ghost" href="#projects">View my work</a>
       </div>
+      <!-- Edit this line to match what you actually want to be hired for. -->
+      <p class="availability">Open to freelance AI and automation projects and remote Python roles.</p>
     </section>
 
     <!-- About -->
@@ -46,33 +224,70 @@
       <h2>About</h2>
       <div class="about-grid">
         <p>
-          Hi, I'm <strong>Abraham Nana Kofi Karikari</strong> — a Python developer, IT
-          professional, AI enthusiast, broadcast technician, cybersecurity advocate,
-          technical writer, and digital evangelist from Ghana.
+          I build AI agents, automation tools and business software in Python. My
+          <strong>AI Agents with Python 2026</strong> series explores tools, memory, RAG,
+          multi-agent systems and production-oriented AI workflows.
         </p>
         <p>
-          I write about <strong>software engineering, information technology,
-          artificial intelligence, cybersecurity, broadcasting, and emerging
-          technologies</strong>, breaking down complex concepts into practical insights
-          for professionals, students, and curious minds. Drawing from my experience in
-          broadcast engineering and IT infrastructure, I enjoy exploring how technology
-          is transforming industries and everyday life.
+          Before software, I worked in <strong>broadcast engineering and IT infrastructure</strong>,
+          where systems have to run all day without failing. I bring the same attention to
+          reliability, testing, and clear failure handling to the AI systems I build.
         </p>
         <p>
-          Beyond technology, I'm passionate about <strong>digital evangelism</strong> —
-          using online platforms to share Christian teachings, encourage faith, and
-          demonstrate how technology can be used as a tool for positive impact and the
-          advancement of God's Kingdom.
+          I also use online platforms to share Christian teaching, and I believe technology
+          is best used responsibly and with purpose. I publish articles at
+          <a href="https://abkarikari23.tech/" target="_blank" rel="noopener">abkarikari23.tech</a>.
         </p>
-        <p>
-          Through <a href="https://abkarikari23.tech/" target="_blank" rel="noopener">abkarikari23.tech</a>,
-          my goal is to educate, inspire, and empower readers with knowledge that prepares
-          them for the future while encouraging them to use technology responsibly and
-          purposefully.
-        </p>
-        <p class="about-signoff">
-          <em>Let's learn, innovate, and make a meaningful impact — one article at a time.</em>
-        </p>
+      </div>
+    </section>
+
+
+    <!-- Services -->
+    <section id="services" class="section container">
+      <h2>How I Can Help Your Business</h2>
+      <p class="section-intro">
+        I help businesses and teams turn manual processes, technical problems and software ideas
+        into practical digital solutions.
+      </p>
+      <div class="card-grid">
+        <article class="card">
+          <p class="card-kicker">AI &amp; automation</p>
+          <h3>AI Agents &amp; Business Automation</h3>
+          <p>
+            Build AI-powered workflows, intelligent assistants and task automation that connect
+            your business processes with modern AI models and tools.
+          </p>
+          <div class="tags">
+            <span>AI Agents</span><span>Python</span><span>Automation</span><span>LLMs</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <p class="card-kicker">Software development</p>
+          <h3>Python Backend &amp; Web Applications</h3>
+          <p>
+            Develop APIs, backend services and business applications for customer management,
+            bookings, payments, internal workflows and other operational needs.
+          </p>
+          <div class="tags">
+            <span>Python</span><span>Flask</span><span>REST APIs</span><span>JavaScript</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <p class="card-kicker">Technical consulting</p>
+          <h3>IT, Infrastructure &amp; Broadcast Technology</h3>
+          <p>
+            Practical technical support and solution planning across IT infrastructure, media
+            systems, broadcast environments, storage, networking and reliability.
+          </p>
+          <div class="tags">
+            <span>IT Infrastructure</span><span>Broadcast</span><span>Networking</span><span>Cybersecurity</span>
+          </div>
+        </article>
+      </div>
+      <div class="service-cta">
+        <a class="btn btn-primary" href="https://wa.me/233547040204?text=Hello%20Abraham%2C%20I%27d%20like%20to%20discuss%20a%20project." target="_blank" rel="noopener">Discuss your project on WhatsApp →</a>
       </div>
     </section>
 
@@ -81,20 +296,24 @@
       <h2>Projects</h2>
       <div class="card-grid">
         <article class="card">
-          <p class="card-kicker">Flagship series + code</p>
+          <p class="card-kicker">AI engineering · Open source</p>
           <h3>AI Agents with Python 2026</h3>
           <p>
-            A 10-part series on designing and building AI agents in Python —
+            A 10-part series on designing and building AI agents in Python:
             tools, memory, RAG, multi-agent orchestration, automation, security,
             and a complete production project. Each part is a self-contained,
-            tested codebase. The series dashboard is live — try the demo.
+            tested codebase.
           </p>
+          <p class="project-status">I write the articles and the code. Parts 01–08 are published, with the project continuing as a practical AI engineering reference.</p>
+          <!-- TODO: add a dashboard screenshot here, for example:
+          <img src="images/dashboard.png" alt="Screenshot of the AI Agents with Python 2026 dashboard" loading="lazy" width="800" height="450" />
+          -->
           <div class="tags">
             <span>Python</span><span>LLM agents</span><span>RAG</span><span>Orchestration</span>
           </div>
           <div class="card-links">
             <a class="card-link" href="https://github.com/ABKarikari23/ai-agents-with-python-2026" target="_blank" rel="noopener">View repository →</a>
-            <a class="card-link live" href="https://ai-agents-with-python-dashboard.onrender.com" target="_blank" rel="noopener">Live interactive dashboard →</a>
+            <a class="card-link live" href="https://ai-agents-with-python-dashboard.onrender.com" target="_blank" rel="noopener">Try the live dashboard →</a>
           </div>
         </article>
 
@@ -102,10 +321,11 @@
           <p class="card-kicker">Fintech platform</p>
           <h3>Smartphone BNPL Platform</h3>
           <p>
-            A buy-now-pay-later platform for smartphone purchases — cross-platform
-            mobile app with a Python backend, covering device financing, customer
-            accounts, and payment tracking.
+            A buy-now-pay-later platform for smartphone purchases. It has a
+            cross-platform mobile app and a Python backend, and covers device
+            financing, customer accounts, and payment tracking.
           </p>
+          <p class="project-status">Focus: translating a real business workflow into a usable digital product.</p>
           <div class="tags">
             <span>Python</span><span>Dart</span><span>JavaScript</span><span>HTML/CSS</span>
           </div>
@@ -119,10 +339,10 @@
           <p class="card-kicker">Business platform</p>
           <h3>Car Repair Shop Platform</h3>
           <p>
-            A web platform for running an auto repair business — Python backend
-            with a browser front end for managing customers, vehicles, bookings,
-            and repair jobs.
+            A web platform for running an auto repair business. A Python backend and
+            browser front end manage customers, vehicles, bookings, and repair jobs.
           </p>
+          <p class="project-status">Focus: digitising customer, vehicle, booking and repair-job workflows.</p>
           <div class="tags">
             <span>Python</span><span>HTML/CSS</span><span>JavaScript</span>
           </div>
@@ -137,44 +357,56 @@
     <!-- Skills -->
     <section id="skills" class="section container">
       <h2>Skills &amp; Stack</h2>
-      <ul class="skill-list">
-        <li>Python</li>
-        <li>AI Agents &amp; LLM Applications</li>
-        <li>Retrieval-Augmented Generation</li>
-        <li>Multi-Agent Orchestration</li>
-        <li>Workflow Automation</li>
-        <li>IT Infrastructure</li>
-        <li>Broadcast Engineering</li>
-        <li>Cybersecurity</li>
-        <li>Technical Writing</li>
-        <li>Flask</li>
-        <li>REST APIs</li>
-        <li>NumPy · Pandas · Matplotlib</li>
-        <li>Machine Learning Foundations</li>
-        <li>Git &amp; GitHub</li>
-        <li>HTML &amp; CSS</li>
-        <li>Testing &amp; Evaluation</li>
-      </ul>
+      <div class="skill-groups">
+        <div>
+          <h3>AI &amp; agents</h3>
+          <ul class="skill-list">
+            <li>AI Agents &amp; LLM Applications</li>
+            <li>Retrieval-Augmented Generation</li>
+            <li>Multi-Agent Orchestration</li>
+            <li>Workflow Automation</li>
+            <li>Testing &amp; Evaluation</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Python &amp; backend</h3>
+          <ul class="skill-list">
+            <li>Python</li>
+            <li>Flask</li>
+            <li>REST APIs</li>
+            <li>Git &amp; GitHub</li>
+            <li>HTML &amp; CSS</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Data &amp; ML</h3>
+          <ul class="skill-list">
+            <li>NumPy · Pandas · Matplotlib</li>
+            <li>Machine Learning Foundations</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Beyond code</h3>
+          <ul class="skill-list">
+            <li>Broadcast Engineering</li>
+            <li>IT Infrastructure</li>
+            <li>Cybersecurity</li>
+            <li>Technical Writing</li>
+          </ul>
+        </div>
+      </div>
     </section>
 
     <!-- Writing -->
     <section id="writing" class="section container">
-      <h2>Writing</h2>
-      <p class="writing-schedule-intro">My publishing schedule:</p>
-      <div class="schedule-grid">
-        <div class="schedule-card">
-          <p class="schedule-day">Wednesdays</p>
-          <p class="schedule-topic">Python articles &amp; tutorials — including the weekly <strong>AI Agents with Python 2026</strong> series</p>
-        </div>
-        <div class="schedule-card">
-          <p class="schedule-day">Mondays</p>
-          <p class="schedule-topic">Tech articles — AI, IT, cybersecurity, IoT, and emerging technologies</p>
-        </div>
-        <div class="schedule-card">
-          <p class="schedule-day">Last Monday / month</p>
-          <p class="schedule-topic">Broadcast engineering articles</p>
-        </div>
-      </div>
+      <h2>Technical Writing &amp; Engineering Knowledge</h2>
+      <p class="writing-intro">
+        I publish practical articles about Python, AI, software engineering, IT infrastructure,
+        cybersecurity and broadcast technology. My <strong>AI Agents with Python 2026</strong> series
+        combines technical writing with working code and experiments.
+        More technical writing lives on
+        <a href="https://abkarikari23.tech/" target="_blank" rel="noopener">abkarikari23.tech</a>.
+      </p>
 
       <div class="writing-list">
         <a class="writing-item" href="https://github.com/ABKarikari23/ai-agents-with-python-2026" target="_blank" rel="noopener">
@@ -200,6 +432,11 @@
           </div>
         </a>
       </div>
+
+      <p class="writing-schedule">
+        New Python articles every Wednesday, tech articles every Monday, and broadcast
+        engineering on the last Monday of each month.
+      </p>
       <p class="writing-more">
         Follow along on
         <a href="https://www.linkedin.com/in/abkarikari23/" target="_blank" rel="noopener">LinkedIn</a>
@@ -207,30 +444,60 @@
       </p>
     </section>
 
+
+    <!-- FAQ -->
+    <section id="faq" class="section container">
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-list">
+        <details>
+          <summary>What kind of projects do you take on?</summary>
+          <p>I work on AI automation, AI agent applications, Python backend systems, business software and selected IT or broadcast technology projects.</p>
+        </details>
+        <details>
+          <summary>Can you work with businesses outside Ghana?</summary>
+          <p>Yes. I am available for remote projects and technical opportunities while being based in Ghana.</p>
+        </details>
+        <details>
+          <summary>How do I start a project?</summary>
+          <p>Send a short description of the problem, your desired outcome and any relevant deadline. WhatsApp is the fastest way to start the conversation.</p>
+        </details>
+      </div>
+    </section>
+
     <!-- Resume -->
     <section id="resume" class="section container">
       <h2>Resume</h2>
       <p>Prefer the one-page version? Download my CV.</p>
-      <!-- Add your resume.pdf to the repo root and this link will work. -->
+      <!-- Make sure resume.pdf is in the repo root, then open the live link to test it. -->
       <a class="btn btn-primary" href="resume.pdf" target="_blank" rel="noopener">Download CV (PDF)</a>
     </section>
 
     <!-- Contact -->
     <section id="contact" class="section container">
       <h2>Contact</h2>
-      <p>The fastest way to reach me is through any of these:</p>
+      <p>Have a software idea, an automation problem or a technical project? Tell me what you are trying to achieve and I will help you determine the next step.</p>
       <div class="contact-grid">
-        <a class="contact-card" href="https://github.com/ABKarikari23" target="_blank" rel="noopener">
-          <h3>GitHub</h3>
-          <p>@ABKarikari23</p>
+        <a class="contact-card contact-primary" href="https://wa.me/233547040204?text=Hello%20Abraham%2C%20I%27d%20like%20to%20discuss%20a%20project." target="_blank" rel="noopener">
+          <h3>Start a Project</h3>
+          <p>Tell me what you need</p>
         </a>
+        <!-- TODO: add your email, then remove these comment markers.
+        <a class="contact-card" href="mailto:YOUR_EMAIL@example.com">
+          <h3>Email</h3>
+          <p>YOUR_EMAIL@example.com</p>
+        </a>
+        -->
         <a class="contact-card" href="https://www.linkedin.com/in/abkarikari23/" target="_blank" rel="noopener">
           <h3>LinkedIn</h3>
           <p>in/abkarikari23</p>
         </a>
         <a class="contact-card" href="https://wa.me/233547040204" target="_blank" rel="noopener">
           <h3>WhatsApp</h3>
-          <p>+233 54 704 0204</p>
+          <p>Send a message</p>
+        </a>
+        <a class="contact-card" href="https://github.com/ABKarikari23" target="_blank" rel="noopener">
+          <h3>GitHub</h3>
+          <p>@ABKarikari23</p>
         </a>
         <a class="contact-card" href="https://abkarikari23.tech/" target="_blank" rel="noopener">
           <h3>Website</h3>
@@ -240,9 +507,16 @@
     </section>
   </main>
 
+
+    <section class="section container business-cta" aria-label="Project call to action">
+      <h2>Have a problem worth automating?</h2>
+      <p>Let's discuss the workflow, the desired result and the simplest technical path to get there.</p>
+      <a class="btn btn-primary" href="https://wa.me/233547040204?text=Hello%20Abraham%2C%20I%27d%20like%20to%20discuss%20a%20business%20or%20software%20project." target="_blank" rel="noopener">Let's talk about your project →</a>
+    </section>
+
   <footer class="site-footer">
     <div class="container">
-      <p>© <span id="year">2026</span> Abraham Nana Kofi Karikari · New articles every Monday &amp; Wednesday · Built with plain HTML &amp; CSS, hosted on GitHub Pages.</p>
+      <p>© <span id="year">2026</span> Abraham Nana Kofi Karikari · Python &amp; AI Engineering · AI Automation · Business Software · Ghana &amp; Remote</p>
     </div>
   </footer>
 
