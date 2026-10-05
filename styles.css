@@ -184,6 +184,10 @@ body {
 
 .about-grid strong { color: var(--text); }
 
+.about-grid a { color: var(--gold); }
+
+.about-signoff { color: var(--text); }
+
 /* Cards */
 .card-grid {
   display: grid;
