@@ -1,0 +1,879 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>A More Connected Healthcare Experience for Ghana — Founder Pitch with Live Demo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+  --bg:#F4F8F6; --surface:#FFFFFF; --ink:#12302A; --muted:#4F6B64; --line:#D3E1DB;
+  --green:#0E6B57; --green-ink:#FFFFFF; --deep:#0B3B32; --gold:#E3A527; --danger:#BF3B2B;
+  --soft:#E3EFEA; --warnbg:#FBEFD0; --warnfg:#74500A; --badbg:#F9E0DB;
+  --display:"Bricolage Grotesque","Trebuchet MS",system-ui,sans-serif;
+  --body:"Figtree","Segoe UI",system-ui,-apple-system,sans-serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0C1815; --surface:#13251F; --ink:#E7F1ED; --muted:#9DB5AD; --line:#27413B;
+    --green:#3DBE9C; --green-ink:#06231C; --soft:#17302A; --warnbg:#3A2E10; --warnfg:#F2CE7A; --badbg:#41201B; --danger:#F0705F;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0C1815; --surface:#13251F; --ink:#E7F1ED; --muted:#9DB5AD; --line:#27413B;
+  --green:#3DBE9C; --green-ink:#06231C; --soft:#17302A; --warnbg:#3A2E10; --warnfg:#F2CE7A; --badbg:#41201B; --danger:#F0705F;
+}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:env(safe-area-inset-top,0px);height:auto}
+@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);line-height:1.6;font-size:17px;-webkit-text-size-adjust:100%}
+h1,h2,h3,h4{font-family:var(--display);line-height:1.15;margin:0;letter-spacing:-.01em}
+p{margin:0 0 1em}
+a{color:var(--green)}
+:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+.prose{max-width:68ch}
+
+/* hero */
+.hero{background:var(--deep);color:#E8F4EF;padding:56px 0 64px}
+.hero .tag{font-size:.95rem;color:#A9CBC0;margin-bottom:28px}
+.hero h1{font-size:clamp(2.3rem,6vw,4.1rem);font-weight:700;max-width:18ch;letter-spacing:-.025em}
+.hero .lede{font-size:1.2rem;max-width:56ch;margin:22px 0 28px;color:#CFE4DC}
+.hero .ctas{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:44px}
+.cta{display:inline-block;padding:13px 22px;border-radius:12px;font-weight:700;text-decoration:none;font-size:1rem}
+.cta.gold{background:var(--gold);color:#201500}
+.cta.line{border:1.5px solid #6E9A8D;color:#E8F4EF}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:20px}
+.fact{border-left:3px solid var(--gold);padding-left:14px}
+.fact b{display:block;font-family:var(--display);font-size:1.35rem;font-weight:700}
+.fact span{color:#A9CBC0;font-size:.92rem}
+
+/* sections */
+.sec{padding:64px 0;border-top:1px solid var(--line)}
+.sec h2{font-size:clamp(1.7rem,3.6vw,2.4rem);margin-bottom:20px}
+.sec h3{font-size:1.2rem;margin:26px 0 8px}
+.lead-in{color:var(--muted)}
+.five{display:grid;gap:14px;margin:22px 0 0;padding:0;list-style:none;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.five li{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px}
+.five b{display:block;font-family:var(--display);font-size:1.1rem;margin-bottom:4px}
+.five span{color:var(--muted);font-size:.95rem}
+
+/* steps */
+.steps{list-style:none;margin:24px 0 0;padding:0;display:grid;gap:14px}
+.steps li{display:grid;grid-template-columns:44px 1fr auto;gap:14px;align-items:start;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px}
+.steps .n{width:44px;height:44px;border-radius:50%;background:var(--green);color:var(--green-ink);display:grid;place-items:center;font-family:var(--display);font-weight:700}
+.steps h3{margin:0 0 2px;font-size:1.15rem}
+.steps p{margin:0;color:var(--muted);font-size:.97rem}
+.try{border:1.5px solid var(--green);background:transparent;color:var(--green);padding:8px 14px;border-radius:10px;font:600 .9rem var(--body);cursor:pointer;white-space:nowrap}
+@media (max-width:640px){.steps li{grid-template-columns:44px 1fr}.try{grid-column:2;justify-self:start}}
+
+/* demo */
+.demo-sec{background:var(--soft);border-top:1px solid var(--line);padding:64px 0}
+.demo-sec h2{font-size:clamp(1.7rem,3.6vw,2.4rem);margin-bottom:12px}
+.demo-grid{display:grid;grid-template-columns:minmax(0,400px) minmax(0,1fr);gap:36px;align-items:start;margin-top:28px}
+@media (max-width:920px){.demo-grid{grid-template-columns:minmax(0,1fr)}}
+.hint{max-width:380px;margin:0 auto 12px;background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--gold);border-radius:12px;padding:10px 12px;font-size:.93rem}
+.hint button{margin-top:6px;border:0;background:var(--green);color:var(--green-ink);border-radius:8px;padding:6px 12px;font:600 .85rem var(--body);cursor:pointer}
+.tabs{display:flex;gap:5px;max-width:380px;margin:0 auto 12px}
+.tab{flex:1;position:relative;border:1.5px solid var(--line);background:var(--surface);color:var(--ink);border-radius:10px;padding:8px 2px;font:600 .8rem var(--body);cursor:pointer}
+.tab[aria-selected="true"]{background:var(--green);color:var(--green-ink);border-color:var(--green)}
+.tab .dot{position:absolute;top:-4px;right:-4px;width:12px;height:12px;border-radius:50%;background:var(--gold);border:2px solid var(--soft)}
+.phone{position:relative;width:100%;max-width:380px;margin:0 auto;height:clamp(580px,80vh,720px);border:10px solid var(--deep);border-radius:40px;background:var(--surface);overflow:hidden;display:flex;flex-direction:column;box-shadow:0 18px 40px rgba(6,30,24,.28)}
+.apptitle{background:var(--green);color:var(--green-ink);padding:12px 16px;font:700 .95rem var(--display);display:flex;justify-content:space-between;align-items:center}
+.apptitle small{font:500 .75rem var(--body);opacity:.85}
+#screen{flex:1;overflow-y:auto;padding:14px;font-size:.93rem;line-height:1.45}
+#screen h4{font-size:1.12rem;margin-bottom:8px}
+.card{border:1px solid var(--line);border-radius:14px;padding:12px;margin-bottom:10px;background:var(--surface)}
+.card h5{margin:0 0 4px;font:700 .98rem var(--display)}
+.card p{margin:0 0 8px;color:var(--muted);font-size:.9rem}
+.card p:last-child{margin-bottom:0}
+.btn{display:block;width:100%;padding:11px 14px;border-radius:12px;border:0;background:var(--green);color:var(--green-ink);font:600 .94rem var(--body);cursor:pointer;margin-top:8px;text-align:center}
+.btn.sec{background:transparent;color:var(--green);border:1.5px solid var(--green)}
+.btn.danger{background:var(--danger);color:#fff}
+.btn.sm{width:auto;padding:7px 12px;margin:0;font-size:.85rem}
+.btn:disabled{opacity:.45;cursor:not-allowed}
+.chip{display:inline-block;padding:2px 9px;border-radius:999px;font-size:.74rem;font-weight:700;background:var(--soft);color:var(--green)}
+.chip.warn{background:var(--warnbg);color:var(--warnfg)}
+.chip.bad{background:var(--badbg);color:var(--danger)}
+.row{display:flex;gap:10px;align-items:center;justify-content:space-between}
+.avatar{width:42px;height:42px;border-radius:50%;background:var(--soft);color:var(--green);display:grid;place-items:center;font:700 .95rem var(--display);flex:none}
+.emerg{display:flex;justify-content:space-between;align-items:center;gap:10px;border:1.5px solid var(--danger);border-radius:14px;padding:10px 12px;margin-bottom:12px;background:var(--badbg)}
+.emerg b{display:block;color:var(--danger)}
+.emerg span{font-size:.8rem;color:var(--muted)}
+.slots{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0}
+.slot{border:1.5px solid var(--line);background:var(--surface);color:var(--ink);padding:7px 10px;border-radius:999px;font:600 .82rem var(--body);cursor:pointer}
+.slot[aria-pressed="true"]{border-color:var(--green);background:var(--soft);color:var(--green)}
+.chkrow{display:flex;gap:8px;align-items:flex-start;font-size:.88rem;margin:8px 0;cursor:pointer}
+.chkrow input{margin-top:3px;width:18px;height:18px;flex:none;accent-color:var(--green)}
+.line{display:flex;justify-content:space-between;gap:10px;padding:4px 0;font-size:.9rem}
+.line.tot{border-top:1px solid var(--line);margin-top:4px;padding-top:8px;font-weight:700}
+textarea,input[type=text]{width:100%;border:1.5px solid var(--line);background:var(--surface);color:var(--ink);border-radius:10px;padding:9px 10px;font:500 .92rem var(--body)}
+textarea{min-height:84px;resize:vertical}
+label.f{display:block;font-size:.8rem;font-weight:600;margin:8px 0 3px;color:var(--muted)}
+.tl{list-style:none;margin:6px 0 0;padding:0}
+.tl li{display:flex;gap:10px;align-items:center;padding:5px 0;color:var(--muted);font-size:.9rem}
+.tl li i{width:20px;height:20px;border-radius:50%;border:2px solid var(--line);display:grid;place-items:center;font-style:normal;font-size:.7rem;flex:none}
+.tl li.done{color:var(--ink)}
+.tl li.done i{background:var(--green);border-color:var(--green);color:var(--green-ink)}
+.tl li.now{color:var(--ink);font-weight:700}
+.tl li.now i{border-color:var(--gold);background:var(--gold)}
+.pin{font:700 1.7rem var(--display);letter-spacing:.3em;text-align:center;background:var(--soft);border-radius:12px;padding:8px;margin:8px 0}
+.vid{position:relative;background:#16352E;border-radius:16px;height:230px;display:grid;place-items:center;color:#DCEFE8;text-align:center;margin-bottom:10px}
+.vid .avatar{width:70px;height:70px;font-size:1.4rem;background:#24504A;color:#DCEFE8;margin:0 auto 6px}
+.vid .me{position:absolute;right:10px;bottom:10px;width:68px;height:88px;border-radius:10px;background:#0E2520;border:2px solid #3B6A60;display:grid;place-items:center;font-size:.72rem}
+.vid .rec{position:absolute;left:12px;top:10px;font-size:.78rem}
+.bubble{background:var(--soft);border-radius:12px 12px 12px 4px;padding:8px 10px;font-size:.88rem;margin-bottom:10px}
+.note{font-size:.8rem;color:var(--muted)}
+.tgl{display:flex;gap:6px;margin-bottom:10px}
+.tgl button{flex:1;border:1.5px solid var(--line);background:var(--surface);color:var(--ink);border-radius:10px;padding:7px 4px;font:600 .8rem var(--body);cursor:pointer;position:relative}
+.tgl button[aria-pressed="true"]{background:var(--green);border-color:var(--green);color:var(--green-ink)}
+#toast{position:absolute;left:12px;right:12px;bottom:14px;background:var(--deep);color:#fff;padding:10px 12px;border-radius:12px;font-size:.84rem;opacity:0;pointer-events:none;transform:translateY(8px);transition:opacity .2s,transform .2s;z-index:5}
+#toast.show{opacity:1;transform:none}
+#busy{position:absolute;inset:0;background:rgba(10,30,25,.72);color:#fff;display:none;place-items:center;text-align:center;z-index:6;font-size:.95rem;padding:20px}
+#busy.show{display:grid}
+.spin{width:30px;height:30px;border-radius:50%;border:4px solid rgba(255,255,255,.3);border-top-color:var(--gold);margin:0 auto 10px}
+@media (prefers-reduced-motion:no-preference){.spin{animation:sp .8s linear infinite}@keyframes sp{to{transform:rotate(360deg)}}}
+
+/* ledger */
+.ledger{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:22px}
+.ledger h3{font-size:1.35rem;margin:0 0 2px}
+.ledger h4{font:700 1rem var(--display);margin:22px 0 8px}
+.ledger .sub{color:var(--muted);font-size:.93rem;margin:0}
+.journey{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
+.journey span{padding:5px 11px;border-radius:999px;border:1.5px solid var(--line);font-size:.82rem;font-weight:600;color:var(--muted)}
+.journey span.done{background:var(--green);border-color:var(--green);color:var(--green-ink)}
+.journey span.now{border-color:var(--gold);color:var(--ink);background:var(--warnbg)}
+.states{display:flex;flex-wrap:wrap;gap:6px}
+.states span{font-size:.76rem;font-weight:600;padding:4px 9px;border-radius:8px;border:1px solid var(--line);color:var(--muted)}
+.states span.done{color:var(--ink);background:var(--soft)}
+.states span.now{background:var(--gold);border-color:var(--gold);color:#201500}
+.states span.branch{background:var(--warnbg);color:var(--warnfg);border-color:transparent}
+table.m{width:100%;border-collapse:collapse;font-size:.9rem}
+table.m th,table.m td{text-align:left;padding:7px 6px;border-bottom:1px solid var(--line);vertical-align:top}
+table.m th{font-weight:600;color:var(--muted);font-size:.8rem}
+table.m td.n{font-variant-numeric:tabular-nums;white-space:nowrap}
+.audit{list-style:none;margin:0;padding:0;max-height:250px;overflow-y:auto;border:1px solid var(--line);border-radius:12px}
+.audit li{padding:8px 10px;border-bottom:1px solid var(--line);font-size:.86rem}
+.audit li:last-child{border-bottom:0}
+.audit time{color:var(--muted);font-variant-numeric:tabular-nums;margin-right:6px}
+.audit b{font-weight:700}
+.audit .empty{color:var(--muted)}
+.reset{margin-top:16px;border:1.5px solid var(--line);background:transparent;color:var(--ink);padding:9px 16px;border-radius:10px;font:600 .9rem var(--body);cursor:pointer}
+
+/* tables in pitch */
+.tablewrap{overflow-x:auto;margin:16px 0;border:1px solid var(--line);border-radius:14px;background:var(--surface)}
+table.t{width:100%;border-collapse:collapse;min-width:520px}
+table.t th,table.t td{text-align:left;padding:11px 14px;border-bottom:1px solid var(--line);vertical-align:top;font-size:.95rem}
+table.t th{background:var(--soft);font-weight:700}
+table.t tr:last-child td{border-bottom:0}
+table.t td.n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+table.t tr.tot td{font-weight:700;background:var(--soft)}
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px;margin-top:18px}
+.box{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px}
+.box h3{margin:0 0 8px;font-size:1.1rem}
+.box ul{margin:0;padding-left:1.1em}
+.box li{margin-bottom:6px}
+.flow{display:flex;flex-wrap:wrap;gap:6px;margin:16px 0}
+.flow span{font-size:.8rem;font-weight:600;padding:5px 10px;border-radius:8px;background:var(--soft);color:var(--ink);border:1px solid var(--line)}
+ul.plain{padding-left:1.15em}
+ul.plain li{margin-bottom:8px}
+.close{background:var(--deep);color:#E8F4EF;padding:64px 0}
+.close h2{font-size:clamp(1.7rem,3.6vw,2.4rem);margin-bottom:16px}
+.close p{max-width:62ch;color:#CFE4DC}
+.close a{color:var(--gold)}
+.fine{font-size:.85rem;color:var(--muted);padding:26px 0 40px}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <p class="tag">Founder pitch for Ghana &middot; Confidential discussion document &middot; Working concept</p>
+    <h1>A more connected healthcare experience for Ghana</h1>
+    <p class="lede">One platform that connects patients, licensed doctors, registered pharmacies, delivery partners and ambulance providers. This version of my pitch comes with a working prototype, so you can click through the whole journey yourself.</p>
+    <div class="ctas">
+      <a class="cta gold" href="#demo">Try the live demo</a>
+      <a class="cta line" href="#why">Read the pitch</a>
+    </div>
+    <div class="facts">
+      <div class="fact"><b>Accra and Kumasi</b><span>Defined pilot service areas</span></div>
+      <div class="fact"><b>Android-first</b><span>Mobile access for patients and providers</span></div>
+      <div class="fact"><b>GHS 60,000–150,000</b><span>Indicative development range</span></div>
+    </div>
+  </div>
+</header>
+
+<section class="sec" id="why">
+  <div class="wrap">
+    <h2>Why I am building this</h2>
+    <div class="prose">
+      <p>For the past year I have been thinking about the steps a person in Ghana takes to get medical attention: finding a qualified doctor, arranging a consultation, getting a valid prescription, locating a pharmacy that has the medicine, arranging delivery, and knowing where to turn when urgent transport is needed. Today these steps are handled by separate people and services, and the patient is left to coordinate all of it.</p>
+      <p>I want to connect those steps in one organised journey, and give doctors, pharmacists and service partners mobile tools to deliver their part. I am not proposing to replace doctors, pharmacists, hospitals or emergency services. My aim is to make it easier for people to reach qualified providers, and easier for those providers to coordinate care.</p>
+      <p>I have used the year to challenge the idea, work through the practical problems and plan a version that can be built in phases and tested in the real world. The prototype below is the first visible result.</p>
+    </div>
+    <h3>Five connected problems</h3>
+    <ul class="five">
+      <li><b>Access</b><span>Patients may struggle to find an available, suitable professional and book an appointment.</span></li>
+      <li><b>Fragmentation</b><span>Consultation, prescription fulfilment, delivery and follow-up run as separate processes.</span></li>
+      <li><b>Convenience</b><span>People travel or make repeated calls just to learn availability, price or next steps.</span></li>
+      <li><b>Trust and accountability</b><span>Patients and providers need clear records, transparent payments and a way to resolve order problems.</span></li>
+      <li><b>Urgent transport</b><span>When medical transport is needed, patients need a verified provider and a clear escalation process.</span></li>
+    </ul>
+  </div>
+</section>
+
+<section class="demo-sec" id="demo">
+  <div class="wrap">
+    <h2>Try the platform: a live, clickable prototype</h2>
+    <div class="prose">
+      <p>Five roles share one live order. Start as the patient and book a doctor. Then use the tabs to act as the doctor, the pharmacy, the courier and the admin team, and watch the order move forward. The panel beside the phone shows what the platform records at each step: order status, where the money sits, and the audit trail.</p>
+      <p class="lead-in"><strong>Everything here is simulated.</strong> People, prices and pharmacies are fictional, payments are pretend, and nothing is medical advice.</p>
+    </div>
+    <div class="demo-grid">
+      <div>
+        <div class="hint" id="hint"></div>
+        <div class="tabs" id="tabs" role="tablist" aria-label="Choose a role to act as"></div>
+        <div class="phone">
+          <div class="apptitle"><span id="apptitle">Patient app</span><small>Demo data</small></div>
+          <div id="screen"></div>
+          <div id="toast" role="status" aria-live="polite"></div>
+          <div id="busy"><div><div class="spin"></div><span id="busytxt">Working…</span></div></div>
+        </div>
+      </div>
+      <div class="ledger" id="ledger" aria-live="polite"></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="solution">
+  <div class="wrap">
+    <h2>How the platform works</h2>
+    <div class="prose">
+      <p>One connected platform with role-based mobile experiences. Each step below is something you can try in the demo above.</p>
+    </div>
+    <ol class="steps">
+      <li><span class="n">1</span><div><h3>Connect</h3><p>A patient registers, searches for an available verified doctor and books a consultation. Unverified doctors cannot be booked.</p></div><button class="try" data-act="jump" data-arg="patient">Try as patient</button></li>
+      <li><span class="n">2</span><div><h3>Consult</h3><p>The doctor assesses the patient remotely when clinically appropriate, records the encounter, and gives advice, a referral or a prescription when justified.</p></div><button class="try" data-act="jump" data-arg="doctor">Try as doctor</button></li>
+      <li><span class="n">3</span><div><h3>Fulfil</h3><p>An authorised pharmacy verifies the prescription, confirms stock and price, and prepares the order.</p></div><button class="try" data-act="jump" data-arg="pharmacy">Try as pharmacy</button></li>
+      <li><span class="n">4</span><div><h3>Deliver</h3><p>A suitable courier collects the order, gives status updates and records proof of delivery with an order-specific PIN.</p></div><button class="try" data-act="jump" data-arg="courier">Try as courier</button></li>
+      <li><span class="n">5</span><div><h3>Protect</h3><p>The patient confirms receipt or raises a dispute. Payment settlement follows the agreed, provider-supported rules.</p></div><button class="try" data-act="jump" data-arg="patient">See the patient side</button></li>
+      <li><span class="n">6</span><div><h3>Coordinate urgent transport</h3><p>The platform helps connect the patient or care team with a verified ambulance partner. It never shows a request as confirmed until a provider accepts it.</p></div><button class="try" data-act="jump" data-arg="admin">Try dispatch</button></li>
+    </ol>
+    <div class="prose">
+      <p style="margin-top:22px">For medicine delivery I will work with courier partners rather than buy a fleet. For ambulance services I will partner with authorised providers and keep human dispatch oversight. Emergency calling must stay available even if the app or its integrations are down, which is why the emergency button sits at the top of the patient home screen.</p>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="trust">
+  <div class="wrap">
+    <h2>A trust-centred payment protection model</h2>
+    <div class="prose">
+      <p>One feature I consider essential is payment protection for pharmacy orders. The pharmacy's eligible payout stays pending until the agreed delivery and dispute conditions are met, to the extent supported by a payment provider's product and legal arrangement. Patients see the order total, delivery status, dispute window and refund status clearly. If a patient reports a missing, incorrect or damaged order, the relevant amount is held where possible while the case is reviewed, and the platform records the evidence and the resolution.</p>
+      <p>I will not assume that a normal payment gateway provides escrow, or that the company can legally hold customer funds itself. Both points must be confirmed with a suitably authorised provider and Ghanaian legal counsel.</p>
+    </div>
+    <div class="flow" aria-label="Order states">
+      <span>PAYMENT_PENDING</span><span>PAYMENT_CONFIRMED</span><span>PHARMACY_ACCEPTED / PREPARING</span><span>READY_FOR_PICKUP</span><span>IN_TRANSIT</span><span>DELIVERED_PENDING_REVIEW</span><span>SETTLED</span><span>DISPUTED / REFUND_PENDING</span>
+    </div>
+    <div class="prose">
+      <p>The demo follows these states. The two-hour inspection window for ordinary deliveries is a policy hypothesis I want to validate. It never removes the separate route for suspected counterfeit medicines, adverse reactions or other serious safety concerns, and the demo includes that route.</p>
+      <p><button class="try" data-act="jump" data-arg="patient">Try a delivery and dispute in the demo</button></p>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="proves">
+  <div class="wrap">
+    <h2>What the prototype shows, and what it does not</h2>
+    <div class="two">
+      <div class="box">
+        <h3>What it demonstrates</h3>
+        <ul>
+          <li>One order moving across five roles, with each role seeing only its own tasks.</li>
+          <li>Unverified doctors and unapproved pharmacies blocked from taking part.</li>
+          <li>A doctor cannot close a consultation until the patient has joined and notes are written.</li>
+          <li>The payment states, held payouts and refunds, shown as the platform would record them.</li>
+          <li>Proof of delivery by PIN, failed delivery, and the inspection window.</li>
+          <li>Ambulance requests that stay unconfirmed until a provider accepts, with escalation to a human dispatcher.</li>
+          <li>A running audit trail of every step.</li>
+        </ul>
+      </div>
+      <div class="box">
+        <h3>What it is not</h3>
+        <ul>
+          <li>Not a working medical service. No real doctors, prescriptions, payments, couriers or ambulances are involved.</li>
+          <li>Not proof of regulatory approval. Medical and Dental Council, Pharmacy Council and NePP, Data Protection Commission, Bank of Ghana and HeFRA requirements still have to be confirmed.</li>
+          <li>Not final pricing. Fees, delivery charges and the two-hour window are hypotheses to test.</li>
+          <li>Not the production build. The real app will be built in Flutter with a NestJS and PostgreSQL backend, as set out in the business plan.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="money">
+  <div class="wrap">
+    <h2>How the business can earn revenue</h2>
+    <div class="prose">
+      <p>I intend to build a sustainable business with transparent fees and written agreements. Potential revenue streams are:</p>
+      <ul class="plain">
+        <li>A platform service fee, or agreed share, on consultations.</li>
+        <li>Permitted pharmacy transaction or technology fees.</li>
+        <li>Disclosed delivery coordination fees.</li>
+        <li>Future service agreements with employers, NGOs and institutions.</li>
+      </ul>
+      <p>Ambulance-related fees would only be considered where lawful and contractually appropriate. I will not assume that publicly funded emergency services can be commercialised through commissions. The business will not sell patient information or influence clinical decisions to increase medicine sales.</p>
+      <p><strong>Illustration, not a forecast:</strong> on a GHS 100 consultation with a 20% platform share, the platform earns GHS 20 and the doctor receives GHS 80. At 1,000 consultations a month that is GHS 20,000 in gross platform revenue, before payment fees, taxes, refunds, support, staffing and hosting. The demo's ledger uses the same 20% split.</p>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="rollout">
+  <div class="wrap">
+    <h2>Initial market and rollout</h2>
+    <div class="prose">
+      <p>The first target markets are Accra and Kumasi. I will recruit a limited network of verified doctors, participating pharmacies and delivery partners, then test the service in defined coverage areas. The platform will not promise availability where a verified provider or delivery partner is not actually available.</p>
+    </div>
+    <div class="tablewrap">
+      <table class="t">
+        <thead><tr><th>Stage</th><th>Focus</th><th>Outcome</th></tr></thead>
+        <tbody>
+          <tr><td><b>1. Validate</b></td><td>Patient and provider interviews, regulatory and payment discovery</td><td>Confirmed requirements and partner interest</td></tr>
+          <tr><td><b>2. Build</b></td><td>Android app, backend, appointments, consultations and admin tools</td><td>Testable telemedicine MVP</td></tr>
+          <tr><td><b>3. Connect</b></td><td>Approved pharmacy workflow, delivery and payment protection</td><td>Controlled pharmacy and delivery pilot</td></tr>
+          <tr><td><b>4. Evaluate</b></td><td>Pilot measurement, support procedures, ambulance-partner readiness</td><td>Evidence for expansion decisions</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="prose">
+      <p>The pilot aims to recruit 10–15 doctors, 5–10 pharmacies and 100–200 invited patients, and to reach at least 85% consultation completion, at least 90% fulfilment of accepted orders, full payment reconciliation and zero serious unresolved payment discrepancies at sign-off. The six-month schedule is a planning estimate, not a commitment.</p>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="budget">
+  <div class="wrap">
+    <h2>Development budget</h2>
+    <div class="prose">
+      <p>My initial development budget is GHS 60,000–150,000. For planning I use GHS 120,000 as a working scenario, subject to quotations and regulatory discovery. It is meant to fund a lean Android-first MVP with a small team, managed third-party services and a limited pilot, not a nationwide healthcare and logistics operation.</p>
+    </div>
+    <div class="tablewrap">
+      <table class="t">
+        <thead><tr><th>Workstream</th><th style="text-align:right">Planning allocation</th></tr></thead>
+        <tbody>
+          <tr><td>Discovery, requirements and UX/UI (the prototype above is the first output)</td><td class="n">GHS 10,000</td></tr>
+          <tr><td>Android application</td><td class="n">GHS 28,000</td></tr>
+          <tr><td>Backend API and database</td><td class="n">GHS 24,000</td></tr>
+          <tr><td>Admin and provider interfaces</td><td class="n">GHS 12,000</td></tr>
+          <tr><td>Video, payment and delivery integrations</td><td class="n">GHS 10,000</td></tr>
+          <tr><td>Testing, security and QA</td><td class="n">GHS 10,000</td></tr>
+          <tr><td>Initial legal and regulatory advice</td><td class="n">GHS 8,000</td></tr>
+          <tr><td>Hosting and third-party services during development</td><td class="n">GHS 3,000</td></tr>
+          <tr><td>Pilot onboarding and operational testing</td><td class="n">GHS 5,000</td></tr>
+          <tr><td>Contingency reserve</td><td class="n">GHS 10,000</td></tr>
+          <tr class="tot"><td>Total working scenario</td><td class="n">GHS 120,000</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="note">Indicative, not a supplier quotation. It excludes ambulance fleet purchases and may not cover ongoing operating costs, extensive integrations, insurance, marketing or unexpected compliance requirements. The scope must be reduced if quotations exceed the approved budget. I will use milestone-based contracts with clear deliverables and code ownership.</p>
+  </div>
+</section>
+
+<section class="sec" id="responsible">
+  <div class="wrap">
+    <h2>Responsible implementation</h2>
+    <div class="prose">
+      <p>Healthcare needs more than good software. Before public launch I will work with qualified Ghanaian advisers and the relevant authorities to confirm the requirements that apply to the platform's actual operating model.</p>
+      <ul class="plain">
+        <li><b>Professional verification:</b> verify clinicians and responsible pharmacists through the relevant professional and regulatory processes.</li>
+        <li><b>Electronic pharmacy compliance:</b> confirm the Pharmacy Council and NePP onboarding, authorisation and integration pathway before enabling pharmacy transactions.</li>
+        <li><b>Data protection:</b> confirm registration and compliance obligations, protect health information, apply least-privilege access and keep audit trails.</li>
+        <li><b>Payments:</b> use a suitably authorised provider and confirm that delayed settlement, refunds and dispute holds are supported in the contract and applicable rules.</li>
+        <li><b>Ambulance safety:</b> partner with appropriate providers, keep human oversight and keep direct emergency contact available. The plan proposes making 112 accessible, to be verified before launch.</li>
+        <li><b>Clinical safety:</b> set up consent, documentation, prescribing, referral and escalation procedures with qualified professionals.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="ask">
+  <div class="wrap">
+    <h2>What I am looking for</h2>
+    <div class="prose">
+      <p>At this stage I want to build relationships with people and organisations who can help turn this concept into a tested, responsible business:</p>
+      <ul class="plain">
+        <li><b>Clinical partners</b> who can advise on care workflows and help recruit qualified doctors.</li>
+        <li><b>Pharmacy partners</b> willing to explore a compliant digital fulfilment process.</li>
+        <li><b>Technology partners or a technical co-founder</b> to help deliver a secure, maintainable MVP.</li>
+        <li><b>Payment, courier and ambulance partners</b> who can validate the operating model and integration needs.</li>
+        <li><b>Investors or strategic advisers</b> who can help fund and guide a controlled pilot, with an agreed scope and milestones.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="close" id="contact">
+  <div class="wrap">
+    <h2>Let's build a more connected healthcare experience for Ghana</h2>
+    <p>After a year of thinking, weighing the practical challenges and connecting the different services into one model, I believe the next step is to move from concept to disciplined execution. I know this needs the right partners, regulatory guidance, careful product development and evidence from real users. I am not claiming every challenge is solved. I am presenting a clear direction, a phased plan, a working prototype and a willingness to build responsibly.</p>
+    <p>I would welcome the chance to discuss the concept, test the assumptions and explore how we can build a sustainable solution together.</p>
+    <p><b>Abraham Karikari</b> &middot; <a href="mailto:abkarikari23@gmail.com">abkarikari23@gmail.com</a></p>
+  </div>
+</section>
+
+<div class="wrap">
+  <p class="fine">This document describes an early-stage business concept and planning assumptions. Pricing, budget, timeline, market demand, partner participation and regulatory pathways require validation before investment or public launch. No specific provider or regulatory approval is implied. The prototype uses fictional data and simulated payments.</p>
+</div>
+
+<script>
+(function(){
+"use strict";
+var $=function(s){return document.querySelector(s)};
+var esc=function(s){return String(s==null?'':s).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]})};
+
+var SLOTS=['Today 4:30 pm','Today 5:15 pm','Tomorrow 9:00 am'];
+var DOCS=[
+ {id:'d1',name:'Dr. Ama Mensah',init:'AM',spec:'General practice',zone:'Accra',fee:80},
+ {id:'d2',name:'Dr. Kwesi Boateng',spec:'General practice',init:'KB',zone:'Kumasi',fee:60},
+ {id:'d3',name:'Dr. Efua Owusu',spec:'Family medicine',init:'EO',zone:'Accra',fee:120},
+ {id:'d4',name:'Dr. Yaw Ofori',spec:'General practice',init:'YO',zone:'Accra',fee:70}
+];
+var PHARMS=[
+ {id:'p1',name:'Osu Community Pharmacy',ok:true,note:'Approved for platform orders'},
+ {id:'p2',name:'Adabraka Pharmacy',ok:false,note:'Awaiting Pharmacy Council / NePP confirmation'}
+];
+var MEDS=[
+ {id:'m1',name:'Amoxicillin 500 mg capsules x15',price:38},
+ {id:'m2',name:'Paracetamol 500 mg tablets x20',price:8}
+];
+var DELIV=15, FEE=4;
+var SEQ=['PAYMENT_PENDING','PAYMENT_CONFIRMED','PREPARING','READY_FOR_PICKUP','IN_TRANSIT','DELIVERED_PENDING_REVIEW','SETTLED'];
+var LABEL={PAYMENT_PENDING:'PAYMENT_PENDING',PAYMENT_CONFIRMED:'PAYMENT_CONFIRMED',PREPARING:'PHARMACY_ACCEPTED / PREPARING',READY_FOR_PICKUP:'READY_FOR_PICKUP',IN_TRANSIT:'IN_TRANSIT',DELIVERED_PENDING_REVIEW:'DELIVERED_PENDING_REVIEW',SETTLED:'SETTLED',DISPUTED:'DISPUTED',REFUND_PENDING:'REFUND_PENDING',CANCELLED:'CANCELLED',FAILED:'FAILED'};
+var FRIENDLY={PAYMENT_PENDING:'Waiting for payment confirmation',PAYMENT_CONFIRMED:'Paid. Waiting for the pharmacy to verify',PREPARING:'The pharmacy is preparing your order',READY_FOR_PICKUP:'Ready for courier pickup',IN_TRANSIT:'On the way to you',DELIVERED_PENDING_REVIEW:'Delivered. Inspection window is open',SETTLED:'Complete',DISPUTED:'Problem reported. Payout on hold',REFUND_PENDING:'Refund being processed',CANCELLED:'Cancelled. You have been refunded',FAILED:'Delivery failed. You have been refunded'};
+var ROLES=[['patient','Patient'],['doctor','Doctor'],['pharmacy','Pharmacy'],['courier','Courier'],['admin','Admin']];
+var TITLES={patient:'Patient app',doctor:'Doctor app',pharmacy:'Pharmacy app',courier:'Courier app',admin:'Admin portal'};
+
+var S, role='patient', callStart=0;
+
+function fresh(){
+ return {consult:null,rx:null,order:null,pay:null,dispute:null,amb:null,audit:[],clock:15*60+42,
+  verified:{d4:false},unavail:{},
+  ui:{pscr:'home',doc:null,slot:null,consent:false,pharm:'p1',admin:'verify',reason:null,showDispute:false,
+      ph:{c1:false,c2:false},pinErr:false,pin:'',note:'',docMeds:{m1:true,m2:true},weak:false,loc:'Osu, Accra (demo location)',cb:'Demo callback number'}};
+}
+function tstr(m){var h=Math.floor(m/60)%24,mm=m%60;return (h%12||12)+':'+(mm<10?'0':'')+mm+(h<12?' am':' pm')}
+function log(actor,text){S.clock+=2;S.audit.push({t:tstr(S.clock),a:actor,x:text})}
+function ghs(n){return 'GHS '+n}
+function doc(id){return DOCS.filter(function(d){return d.id===id})[0]}
+function curDoc(){return doc(S.consult?S.consult.doc:'d1')}
+function isVerified(d){return d.id==='d4'?S.verified.d4:true}
+function btn(act,label,cls,arg,dis){return '<button class="btn '+(cls||'')+'" data-act="'+act+'"'+(arg!==undefined&&arg!==''?' data-arg="'+esc(arg)+'"':'')+(dis?' disabled':'')+'>'+label+'</button>'}
+function setState(st){
+ S.order.state=st;var i=SEQ.indexOf(st);if(i>=0)S.order.reached=Math.max(S.order.reached,i);
+ log('Platform','Order status: '+LABEL[st]);
+}
+function busy(msg,fn){
+ $('#busytxt').textContent=msg;$('#busy').classList.add('show');
+ setTimeout(function(){$('#busy').classList.remove('show');fn();render()},900);
+}
+var toastT;
+function toast(msg){var t=$('#toast');t.textContent=msg;t.classList.add('show');clearTimeout(toastT);toastT=setTimeout(function(){t.classList.remove('show')},4200)}
+function medTotal(items){return items.reduce(function(a,m){return a+m.price},0)}
+
+/* ---------- actions ---------- */
+var A={
+ role:function(r){role=r;render()},
+ jump:function(r){role=r;render();var d=$('#demo');if(d)d.scrollIntoView({block:'start'})},
+ reset:function(){S=fresh();role='patient';render()},
+ nav:function(s){S.ui.pscr=s;render()},
+ callEm:function(){toast('Demo only: no call is placed. In the real app this opens the phone dialler, with no sign-in or payment needed. The emergency number is confirmed before launch.')},
+ goDoctors:function(){S.ui.pscr='doctors';render()},
+ bookDoc:function(id){S.ui.doc=id;S.ui.slot=null;S.ui.consent=false;S.ui.pscr='book';render()},
+ slot:function(s){S.ui.slot=s;render()},
+ consent:function(){S.ui.consent=!S.ui.consent;render()},
+ payConsult:function(){
+  if(!S.ui.slot||!S.ui.consent)return;var d=doc(S.ui.doc);
+  busy('Contacting payment provider…',function(){
+   S.consult={doc:d.id,slot:S.ui.slot,status:'booked',joined:false,fee:d.fee,outcome:null};
+   log('Payment provider','Payment confirmed: '+ghs(d.fee)+' for consultation');
+   log('Patient','Booked '+d.name+' for '+S.ui.slot+'; consent recorded');
+   S.ui.pscr='home';
+  });
+ },
+ startConsult:function(){S.consult.status='in_progress';log('Doctor',curDoc().name+' opened the consultation room')},
+ joinCall:function(){S.consult.joined=true;S.ui.pscr='call';S.ui.weak=false;callStart=Date.now();log('Patient','Joined the consultation')},
+ leaveCall:function(){S.ui.pscr='home';render()},
+ weak:function(){S.ui.weak=true;log('System','Weak connection: call switched to audio-only. Fallback: doctor can call the patient back.')},
+ toggleAvail:function(){var id=curDoc().id;S.unavail[id]=!S.unavail[id];log('Doctor',curDoc().name+(S.unavail[id]?' went unavailable':' is available again'))},
+ dmed:function(id){S.ui.docMeds[id]=!S.ui.docMeds[id]},
+ issueRx:function(){
+  var items=MEDS.filter(function(m){return S.ui.docMeds[m.id]});
+  if(!S.consult.joined||!S.ui.note.trim()||!items.length)return;
+  S.consult.status='done';S.consult.outcome='rx';S.rx={items:items,by:curDoc().name};
+  log('Doctor','Clinical note saved. Prescription issued by '+curDoc().name+' ('+items.length+' item'+(items.length>1?'s':'')+')');
+  S.ui.note='';
+ },
+ refer:function(){
+  if(!S.consult.joined||!S.ui.note.trim())return;
+  S.consult.status='done';S.consult.outcome='referral';
+  log('Doctor','Clinical note saved. Patient referred to in-person care; no prescription issued');S.ui.note='';
+ },
+ viewRx:function(){S.ui.pscr='rx';render()},
+ chooseP:function(id){S.ui.pharm=id;render()},
+ toCheckout:function(){S.ui.pscr='checkout';render()},
+ payOrder:function(){
+  var items=S.rx.items,med=medTotal(items);
+  busy('Contacting payment provider…',function(){
+   S.order={id:'DEMO-1024',items:items,med:med,del:DELIV,fee:FEE,total:med+DELIV+FEE,pin:String(1000+Math.floor(Math.random()*9000)),state:'PAYMENT_PENDING',reached:0,windowLeft:7200,final:null,refund:0,pharm:S.ui.pharm};
+   log('Patient','Placed pharmacy order '+S.order.id+' ('+ghs(S.order.total)+')');
+   log('Platform','Order status: PAYMENT_PENDING');
+   S.order.state='PAYMENT_CONFIRMED';S.order.reached=1;
+   S.pay={med:'pending',del:'pending',fee:'pending'};
+   log('Payment provider','Payment confirmed. Pharmacy payout stays pending until delivery conditions are met');
+   log('Platform','Order status: PAYMENT_CONFIRMED');
+   S.ui.pscr='track';
+  });
+ },
+ phChk:function(k){S.ui.ph[k]=!S.ui.ph[k];render()},
+ phAccept:function(){if(!S.ui.ph.c1||!S.ui.ph.c2)return;log('Pharmacy','Prescription verified by responsible pharmacist; stock and price confirmed');setState('PREPARING')},
+ phDecline:function(){
+  setState('CANCELLED');S.order.final='cancelled';S.order.refund=S.order.total;S.pay={med:'refunded',del:'refunded',fee:'refunded'};
+  log('Pharmacy','Order declined (out of stock)');log('Payment provider','Full refund of '+ghs(S.order.total)+' issued to patient');
+ },
+ phReady:function(){setState('READY_FOR_PICKUP')},
+ cAccept:function(){log('Courier','Job accepted; order collected from pharmacy');setState('IN_TRANSIT')},
+ cDeliver:function(){
+  var el=$('#pininput');var v=el?el.value.trim():'';S.ui.pin=v;
+  if(v!==S.order.pin){S.ui.pinErr=true;render();return}
+  S.ui.pinErr=false;S.ui.pin='';log('Courier','Proof of delivery: order PIN matched');setState('DELIVERED_PENDING_REVIEW');
+ },
+ cFail:function(why){
+  S.ui.pin='';S.ui.pinErr=false;setState('FAILED');S.order.final='failed';S.order.refund=S.order.total;S.pay={med:'refunded',del:'refunded',fee:'refunded'};
+  log('Courier','Delivery failed: '+why);log('Payment provider','Full refund of '+ghs(S.order.total)+' issued to patient');
+ },
+ confirm:function(){A.settle('patient')},
+ settle:function(by){
+  if(!S.order||S.order.state!=='DELIVERED_PENDING_REVIEW')return;
+  S.pay={med:'settled',del:'settled',fee:'settled'};S.order.final='settled';
+  log(by==='auto'?'Platform':'Patient',by==='auto'?'Inspection window ended with no dispute':'Patient confirmed receipt');
+  setState('SETTLED');log('Payment provider','Pharmacy payout released and reconciled');
+ },
+ ff:function(){if(S.order){S.order.windowLeft=0;A.settle('auto')}},
+ showDispute:function(){S.ui.showDispute=true;S.ui.reason=null;render()},
+ cancelDispute:function(){S.ui.showDispute=false;render()},
+ reason:function(r){S.ui.reason=r;render()},
+ openDispute:function(){
+  if(!S.ui.reason)return;
+  S.dispute={reason:S.ui.reason,status:'open',result:''};S.pay={med:'held',del:'settled',fee:'settled'};
+  log('Patient','Dispute opened: '+S.ui.reason);setState('DISPUTED');
+  log('Payment provider','Medicine payout of '+ghs(S.order.med)+' placed on hold. Unrelated amounts are not withheld');
+  S.ui.showDispute=false;S.ui.reason=null;
+ },
+ safety:function(){log('Patient','Medicine safety report sent for human review (not limited by the dispute window)');toast('Safety report sent to the support team for human review. This route is always open, even after the inspection window.')},
+ adminTab:function(t){S.ui.admin=t;render()},
+ approveDoc:function(){S.verified.d4=true;log('Admin','Registration and practising status checked; Dr. Yaw Ofori verified')},
+ resolve:function(kind){
+  var o=S.order,d=S.dispute;if(!d||d.status!=='open')return;
+  if(kind==='reject'){
+   S.pay.med='settled';o.final='settled';d.status='closed';d.result='Dispute rejected. Pharmacy payout released.';
+   log('Admin','Dispute decision: not upheld. Evidence reviewed and recorded');setState('SETTLED');log('Payment provider','Held payout released to pharmacy');return;
+  }
+  var amt=kind==='full'?o.med:Math.round(o.med/2);
+  d.status='refund';log('Admin','Dispute decision: '+(kind==='full'?'full':'partial')+' refund of '+ghs(amt)+' approved');setState('REFUND_PENDING');
+  setTimeout(function(){
+   o.refund=amt;S.pay.med=kind==='full'?'refunded':'partial';o.final=kind==='full'?'refunded':'partial';
+   d.status='closed';d.result=(kind==='full'?'Full':'Partial')+' refund of '+ghs(amt)+' issued to the patient.';
+   log('Payment provider','Refund of '+ghs(amt)+' confirmed with provider reference');setState('SETTLED');render();
+  },1400);
+ },
+ ambOpen:function(){S.ui.pscr='amb';render()},
+ ambSend:function(){
+  var l=$('#ambloc'),c=$('#ambcb');if(l)S.ui.loc=l.value;if(c)S.ui.cb=c.value;
+  S.amb={status:'requested',provider:null,eta:null};
+  log('Patient','Ambulance request created: location and callback captured. Not yet accepted by any provider');
+ },
+ ambAck:function(){S.amb.status='acknowledged';log('Admin','Dispatcher acknowledged the ambulance request and is contacting partner providers')},
+ ambAccept:function(){S.amb.status='accepted';S.amb.provider='Partner Provider A (demo)';S.amb.eta=12;log('Ambulance partner','Partner Provider A (demo) accepted the request. ETA about 12 minutes')},
+ ambDone:function(){S.amb.status='completed';log('Admin','Ambulance request closed; incident record saved')},
+ ambEsc:function(){S.amb.status='escalated';log('System','No acknowledgement within the agreed threshold. Escalated to a human dispatcher')}
+};
+
+/* ---------- derived ---------- */
+function journey(){
+ var c=S.consult,o=S.order,r=S.order?S.order.reached:0,out=[];
+ var done=[!!c, !!c&&c.status==='done', !!o&&(r>=3||['CANCELLED'].indexOf(o.state)>=0&&false), !!o&&(o.state==='FAILED'?false:r>=5), !!o&&!!o.final&&o.final!=='cancelled'&&o.final!=='failed', !!S.amb&&(S.amb.status==='accepted'||S.amb.status==='completed')];
+ var names=['Connect','Consult','Fulfil','Deliver','Protect','Urgent transport'];
+ var now=-1;for(var i=0;i<5;i++){if(!done[i]){now=i;break}}
+ if(now===-1&&S.amb&&!done[5])now=5;
+ return names.map(function(n,i){return '<span class="'+(done[i]?'done':(i===now?'now':''))+'">'+(done[i]?'✓ ':'')+n+'</span>'}).join('');
+}
+function nextHint(){
+ var c=S.consult,o=S.order,a=S.amb;
+ if(a&&['requested','acknowledged','escalated'].indexOf(a.status)>=0&&(!o||o.final))return {t:'An ambulance request is waiting. Act as the admin dispatcher.',r:'admin'};
+ if(!c)return {t:'You start as the patient. Tap “Find a doctor” and book a verified doctor.',r:'patient'};
+ if(c.status==='booked')return {t:'Payment confirmed. Switch to the doctor to open the consultation room.',r:'doctor'};
+ if(c.status==='in_progress'&&!c.joined)return {t:'The doctor is ready. As the patient, join the consultation.',r:'patient'};
+ if(c.status==='in_progress')return {t:'Back to the doctor: write a clinical note, then issue a prescription or refer.',r:'doctor'};
+ if(c.outcome==='referral'&&!o)return {t:'The doctor referred you to in-person care, so no prescription was issued. Press “Start again” in the side panel to try the other path.',r:'patient'};
+ if(c.status==='done'&&S.rx&&!o)return {t:'Prescription issued. As the patient, choose a pharmacy and pay.',r:'patient'};
+ if(o){
+  var m={PAYMENT_CONFIRMED:['The pharmacy must verify the prescription before preparing the order.','pharmacy'],PREPARING:['Mark the order ready for pickup.','pharmacy'],READY_FOR_PICKUP:['A courier job is waiting.','courier'],IN_TRANSIT:['Deliver the order. The PIN is on the patient tab.','courier'],DELIVERED_PENDING_REVIEW:['Delivered. As the patient, confirm receipt or report a problem.','patient'],DISPUTED:['A dispute is waiting. Act as the admin and decide.','admin']}[o.state];
+  if(m)return {t:m[0],r:m[1]};
+  if(o.final){
+   if(!a)return {t:'Order finished. Now try an ambulance request from the patient home screen, or press “Start again”.',r:'patient'};
+   return {t:'Walk through the ambulance flow as the admin dispatcher.',r:'admin'};
+  }
+ }
+ return {t:'Explore any role.',r:role};
+}
+
+/* ---------- screens ---------- */
+function patient(){
+ var u=S.ui,c=S.consult,o=S.order,a=S.amb,h='';
+ var back=function(t,to){return '<div class="row" style="margin-bottom:8px"><button class="btn sec sm" data-act="nav" data-arg="'+to+'">Back</button><span class="note">'+t+'</span></div>'};
+ if(u.pscr==='home'){
+  h+='<div class="emerg"><div><b>Emergency?</b><span>Always available. No account or payment needed.</span></div><button class="btn danger sm" data-act="callEm">Call now</button></div>';
+  h+='<h4>Hello, Esi</h4>';
+  if(!c){h+='<div class="card"><h5>Talk to a doctor</h5><p>See verified doctors, disclosed fees and available times.</p>'+btn('goDoctors','Find a doctor')+'</div>';}
+  else{
+   var d=doc(c.doc);
+   if(c.status==='booked')h+='<div class="card"><h5>Booked: '+esc(d.name)+'</h5><p>'+esc(c.slot)+'. Paid '+ghs(c.fee)+'. Waiting for the doctor to open the room.</p><span class="chip warn">Waiting for doctor</span></div>';
+   if(c.status==='in_progress')h+='<div class="card"><h5>'+esc(d.name)+' is ready</h5><p>Your consultation room is open.</p>'+btn('joinCall',c.joined?'Rejoin consultation':'Join consultation')+'</div>';
+   if(c.status==='done'&&c.outcome==='rx'&&!o)h+='<div class="card"><h5>Prescription ready</h5><p>Issued by '+esc(d.name)+'. Choose a pharmacy to continue.</p>'+btn('viewRx','View prescription')+'</div>';
+   if(c.status==='done'&&c.outcome==='referral')h+='<div class="card"><h5>Referred to in-person care</h5><p>'+esc(d.name)+' advised you to be seen in person. No medicine order is needed.</p></div>';
+  }
+  if(o)h+='<div class="card"><h5>Pharmacy order</h5><p>'+FRIENDLY[o.state]+'</p>'+btn('nav','Track order','sec','track')+'</div>';
+  h+='<div class="card"><h5>Need an ambulance?</h5>'+(a?'<p>Request status: <b>'+a.status+'</b></p>':'<p>Send a request to verified partner providers. Not a replacement for calling emergency services.</p>')+btn('ambOpen',a?'View request':'Request an ambulance','sec')+'</div>';
+ }
+ if(u.pscr==='doctors'){
+  h+=back('Doctors near you (fictional)','home')+'<h4>Choose a doctor</h4>';
+  DOCS.forEach(function(d){
+   var ver=isVerified(d),un=S.unavail[d.id],ok=ver&&!un;
+   h+='<div class="card"><div class="row" style="justify-content:flex-start"><div class="avatar">'+d.init+'</div><div><h5>'+d.name+'</h5><p style="margin:0">'+d.spec+' · '+d.zone+' · '+ghs(d.fee)+'</p></div></div>'
+    +'<div style="margin-top:8px">'+(ver?'<span class="chip">Verified</span> ':'<span class="chip warn">Verification pending</span> ')+(un?'<span class="chip bad">Unavailable now</span>':'')+'</div>'
+    +btn('bookDoc',ver?(un?'Unavailable':'Book'):'Cannot be booked yet',ok?'':'sec',d.id,!ok)+'</div>';
+  });
+  h+='<p class="note">Unverified clinicians cannot take paid consultations. Try approving Dr. Yaw Ofori in the Admin tab.</p>';
+ }
+ if(u.pscr==='book'){
+  var d=doc(u.doc);
+  h+=back('Book a consultation','doctors')+'<div class="card"><h5>'+d.name+'</h5><p>'+d.spec+' · '+d.zone+'</p><label class="f">Choose a time</label><div class="slots">'
+   +SLOTS.map(function(s){return '<button class="slot" data-act="slot" data-arg="'+s+'" aria-pressed="'+(u.slot===s)+'">'+s+'</button>'}).join('')+'</div></div>'
+   +'<div class="card"><div class="line"><span>Consultation fee</span><span>'+ghs(d.fee)+'</span></div><div class="line tot"><span>You pay</span><span>'+ghs(d.fee)+'</span></div><p class="note" style="margin-top:6px">Clinical decisions stay with the doctor. You see the full fee before paying.</p></div>'
+   +'<label class="chkrow"><input type="checkbox" data-act="consent" '+(u.consent?'checked':'')+'><span>I consent to a remote consultation and understand it is not for emergencies.</span></label>'
+   +btn('payConsult','Pay '+ghs(d.fee)+' with Mobile Money (demo)','','',!(u.slot&&u.consent));
+ }
+ if(u.pscr==='call'&&c){
+  var d=doc(c.doc);
+  h+='<div class="vid"><span class="rec">'+(u.weak?'Audio only':'Video')+' · <span data-calltimer>00:00</span></span><div><div class="avatar">'+d.init+'</div>'+esc(d.name)+'<br><span class="note" style="color:#A9CBC0">'+(u.weak?'Weak connection. Switched to audio.':'Connected')+'</span></div><div class="me">You</div></div>'
+   +'<div class="bubble">Hello Esi, thanks for joining. What would you like to talk about today?</div>'
+   +(u.weak?'':btn('weak','Simulate a weak connection','sec'))
+   +btn('leaveCall','Leave call','danger')
+   +'<p class="note" style="margin-top:8px">The doctor finishes the consultation from the Doctor tab. The demo skips real video.</p>';
+ }
+ if(u.pscr==='rx'&&S.rx){
+  h+=back('Prescription','home')+'<h4>Your prescription</h4><div class="card"><p>Issued by '+esc(S.rx.by)+' (verified)</p>'
+   +S.rx.items.map(function(m){return '<div class="line"><span>'+m.name+'</span><span>'+ghs(m.price)+'</span></div>'}).join('')
+   +'<p class="note">Sample items for the demo. Not medical advice.</p></div><h4>Choose a pharmacy</h4>'
+   +PHARMS.map(function(p){return '<div class="card"><div class="row"><div><h5>'+p.name+' (demo)</h5><p style="margin:0">'+p.note+'</p></div>'+(p.ok?'<button class="slot" data-act="chooseP" data-arg="'+p.id+'" aria-pressed="'+(u.pharm===p.id)+'">'+(u.pharm===p.id?'Selected':'Select')+'</button>':'<span class="chip warn">Not available</span>')+'</div></div>'}).join('')
+   +btn('toCheckout','Continue to checkout');
+ }
+ if(u.pscr==='checkout'&&S.rx){
+  var med=medTotal(S.rx.items);
+  h+=back('Checkout','rx')+'<div class="card"><h5>Order summary</h5>'
+   +S.rx.items.map(function(m){return '<div class="line"><span>'+m.name+'</span><span>'+ghs(m.price)+'</span></div>'}).join('')
+   +'<div class="line"><span>Delivery</span><span>'+ghs(DELIV)+'</span></div><div class="line"><span>Service fee</span><span>'+ghs(FEE)+'</span></div><div class="line tot"><span>Total</span><span>'+ghs(med+DELIV+FEE)+'</span></div></div>'
+   +'<div class="card"><h5>Payment protection</h5><p>The pharmacy is paid after delivery conditions are met. You have a 2-hour inspection window after delivery to report a missing, wrong or damaged item. Safety concerns can be reported at any time.</p></div>'
+   +btn('payOrder','Pay '+ghs(med+DELIV+FEE)+' (demo)');
+ }
+ if(u.pscr==='track'&&o){
+  var steps=[[1,'Paid'],[2,'Pharmacy preparing'],[3,'Ready for pickup'],[4,'On the way'],[5,'Delivered'],[6,'Complete']];
+  h+=back('Order '+o.id,'home')+'<div class="card"><h5>'+FRIENDLY[o.state]+'</h5><span class="chip">'+LABEL[o.state]+'</span></div>';
+  if(o.state==='CANCELLED'||o.state==='FAILED')h+='<div class="card"><p>Full refund of '+ghs(o.total)+' issued.</p></div>';
+  else h+='<div class="card"><ul class="tl">'+steps.map(function(s){var d=o.reached>=s[0];var now=o.reached===s[0]-1;return '<li class="'+(d?'done':(now?'now':''))+'"><i>'+(d?'✓':'')+'</i>'+s[1]+'</li>'}).join('')+'</ul></div>';
+  if(['PREPARING','READY_FOR_PICKUP','IN_TRANSIT'].indexOf(o.state)>=0)h+='<div class="card"><h5>Your delivery PIN</h5><div class="pin">'+o.pin+'</div><p class="note">Give this PIN to the courier only when the order is in your hands.</p></div>';
+  if(o.state==='DELIVERED_PENDING_REVIEW'){
+   h+='<div class="card"><h5>Check your order</h5><p>Inspection window: <b data-cd>'+cd(o.windowLeft)+'</b> left (demo clock runs 60x faster).</p>';
+   if(u.showDispute){
+    h+='<label class="f">What went wrong?</label><div class="tgl" style="flex-wrap:wrap">'+['Missing item','Wrong item','Damaged item'].map(function(r){return '<button data-act="reason" data-arg="'+r+'" aria-pressed="'+(u.reason===r)+'">'+r+'</button>'}).join('')+'</div>'
+     +btn('openDispute','Submit report','danger','',!u.reason)+btn('cancelDispute','Cancel','sec');
+   }else{
+    h+=btn('confirm','Everything is correct: confirm receipt')+btn('showDispute','Report a problem','sec')+btn('ff','Demo: skip to end of window','sec');
+   }
+   h+='</div>';
+  }
+  if(o.state==='DISPUTED'||o.state==='REFUND_PENDING')h+='<div class="card"><h5>Under review</h5><p>Your report ('+esc(S.dispute.reason)+') is with the support team. The pharmacy payout of '+ghs(o.med)+' is on hold.</p></div>';
+  if(o.final){
+   var msg={settled:'Order complete. Payout released to the pharmacy.',refunded:'Order complete. Refund of '+ghs(o.refund)+' issued for the medicine.',partial:'Order complete. Partial refund of '+ghs(o.refund)+' issued.',cancelled:'',failed:''}[o.final];
+   if(msg)h+='<div class="card"><h5>'+msg+'</h5>'+(S.dispute&&S.dispute.result?'<p>'+esc(S.dispute.result)+'</p>':'')+'</div>';
+  }
+  h+=btn('safety','Report a medicine safety concern','sec')+'<p class="note" style="margin-top:6px">Counterfeit medicine or a side effect? This route is always open.</p>';
+ }
+ if(u.pscr==='amb'){
+  h+=back('Ambulance request','home')+'<div class="emerg"><div><b>In danger now?</b><span>Call emergency services directly.</span></div><button class="btn danger sm" data-act="callEm">Call now</button></div>';
+  if(!a){
+   h+='<div class="card"><h5>Send a request</h5><p>We pass it to a verified partner provider. It is not an ambulance booking until a provider accepts.</p><label class="f" for="ambloc">Where is the patient?</label><input type="text" id="ambloc" value="'+esc(u.loc)+'"><label class="f" for="ambcb">Callback number</label><input type="text" id="ambcb" value="'+esc(u.cb)+'">'+btn('ambSend','Send request')+'</div>';
+  }else{
+   var m2={requested:['Request sent. Waiting for a provider.','warn','Not confirmed'],acknowledged:['A dispatcher has your request and is contacting providers.','warn','Not confirmed yet'],escalated:['No acknowledgement yet, so your request was escalated to a human dispatcher. If it is urgent, call emergency services now.','bad','Escalated'],accepted:['Confirmed. '+esc(a.provider)+' accepted your request. ETA about '+a.eta+' minutes.','','Confirmed'],completed:['This request is closed.','','Closed']}[a.status];
+   h+='<div class="card"><span class="chip '+m2[1]+'">'+m2[2]+'</span><p style="margin-top:8px">'+m2[0]+'</p><p class="note">Location: '+esc(u.loc)+'</p></div>';
+  }
+ }
+ return h;
+}
+function cd(s){var h=Math.floor(s/3600),m=Math.floor(s%3600/60),x=s%60;return h+':'+(m<10?'0':'')+m+':'+(x<10?'0':'')+x}
+
+function doctorV(){
+ var c=S.consult,u=S.ui,d=curDoc(),h='';
+ h+='<div class="row" style="margin-bottom:10px;justify-content:flex-start"><div class="avatar">'+d.init+'</div><div><h4 style="margin:0">'+d.name+'</h4><span class="note">'+d.spec+' · Verified</span></div></div>';
+ if(!c){
+  h+='<div class="card"><h5>No appointment requests yet</h5><p>When a patient books and pays, the request appears here.</p></div><button class="slot" data-act="toggleAvail" aria-pressed="'+(!S.unavail[d.id])+'">'+(S.unavail[d.id]?'Unavailable. Tap to go available':'Available for bookings')+'</button><p class="note" style="margin-top:8px">Going unavailable stops patients booking you.</p>';
+  return h;
+ }
+ var nm=d.name;
+ if(c.status==='booked')h+='<div class="card"><h5>New appointment</h5><p>Patient: Esi (demo)<br>'+esc(c.slot)+'<br>Payment confirmed: '+ghs(c.fee)+'. Your share after a 20% platform fee: '+ghs(c.fee*0.8)+'.</p><span class="chip">Consent recorded</span>'+btn('startConsult','Open consultation room')+'</div>';
+ if(c.status==='in_progress'){
+  var items=MEDS;
+  h+='<div class="card"><h5>Consultation with Esi</h5>'+(c.joined?'<span class="chip">Patient has joined</span>':'<span class="chip warn">Waiting for patient to join</span>')+'<label class="f" for="note">Clinical note (required)</label><textarea id="note" data-bind="note" placeholder="Record what was discussed and advised">'+esc(u.note)+'</textarea></div>'
+   +'<div class="card"><h5>Prescription (only if justified)</h5>'+items.map(function(m){return '<label class="chkrow"><input type="checkbox" data-act="dmed" data-arg="'+m.id+'" '+(u.docMeds[m.id]?'checked':'')+'><span>'+m.name+'</span></label>'}).join('')
+   +btn('issueRx','Sign and issue prescription','',' ',!c.joined)+btn('refer','Refer to in-person care instead','sec','',!c.joined)+'<p class="note" style="margin-top:6px">In the demo, save your note by typing it before pressing a button. Severe symptoms should always be advised to seek urgent help.</p></div>';
+ }
+ if(c.status==='done')h+='<div class="card"><h5>Consultation closed</h5><p>'+(c.outcome==='rx'?'Prescription issued and linked to the encounter.':'Patient referred to in-person care.')+'</p><span class="chip">Record saved</span></div>';
+ return h;
+}
+function pharmacyV(){
+ var o=S.order,u=S.ui,h='';
+ h+='<h4>Osu Community Pharmacy</h4><p class="note">Approved for platform orders · Responsible pharmacist on duty</p>';
+ if(!o||o.pharm!=='p1')return h+'<div class="card"><h5>No orders yet</h5><p>Paid orders from patients appear here.</p></div>';
+ var rxcard='<div class="card"><h5>Order '+o.id+'</h5><p>Prescription by '+esc(S.rx.by)+' (verified)</p>'+o.items.map(function(m){return '<div class="line"><span>'+m.name+'</span><span>'+ghs(m.price)+'</span></div>'}).join('')+'<p class="note">Your payout: '+ghs(o.med)+' once delivery conditions are met.</p></div>';
+ if(o.state==='PAYMENT_CONFIRMED'){
+  h+=rxcard+'<div class="card"><h5>Before you accept</h5><label class="chkrow"><input type="checkbox" data-act="phChk" data-arg="c1" '+(u.ph.c1?'checked':'')+'><span>The responsible pharmacist verified this prescription.</span></label><label class="chkrow"><input type="checkbox" data-act="phChk" data-arg="c2" '+(u.ph.c2?'checked':'')+'><span>Stock and price are confirmed.</span></label>'
+   +btn('phAccept','Accept and start preparing','','',!(u.ph.c1&&u.ph.c2))+btn('phDecline','Decline: out of stock','danger')+'</div>';
+ }else if(o.state==='PREPARING'){
+  h+=rxcard+btn('phReady','Mark ready for courier pickup');
+ }else{
+  h+=rxcard+'<div class="card"><h5>Status</h5><span class="chip">'+LABEL[o.state]+'</span><p style="margin-top:8px">'+payoutNote()+'</p></div>';
+ }
+ return h;
+}
+function payoutNote(){
+ var p=S.pay;if(!p)return '';
+ return {pending:'Payout pending until delivery and dispute conditions are met.',held:'Payout on hold while a dispute is reviewed.',settled:'Payout released and reconciled.',refunded:'Order refunded. No payout.',partial:'Part of the payout was refunded after a dispute decision.'}[p.med];
+}
+function courierV(){
+ var o=S.order,u=S.ui,h='<h4>Courier jobs</h4><p class="note">Demo courier: Kofi (verified)</p>';
+ if(!o||['PAYMENT_CONFIRMED','PREPARING'].indexOf(o.state)>=0&&true&&o.state!=='x'){
+  if(!o||o.state==='PAYMENT_CONFIRMED'||o.state==='PREPARING')return h+'<div class="card"><h5>'+(o?'A job is coming':'No jobs yet')+'</h5><p>'+(o?'The pharmacy is still preparing the order.':'Eligible jobs appear when a pharmacy marks an order ready.')+'</p></div>';
+ }
+ if(o.state==='READY_FOR_PICKUP')return h+'<div class="card"><h5>New delivery job</h5><p>Pickup: Osu Community Pharmacy (demo)<br>Drop-off: Osu zone. Exact address shared after you accept.<br>Delivery fee: '+ghs(o.del)+'</p>'+btn('cAccept','Accept job and collect order')+'</div>';
+ if(o.state==='IN_TRANSIT'){
+  return h+'<div class="card"><h5>Hand over the order</h5><p>Ask the patient for their 4-digit PIN. Do not hand over without it.</p><label class="f" for="pininput">Order PIN</label><input type="text" inputmode="numeric" maxlength="4" id="pininput" value="'+esc(u.pin)+'" placeholder="4 digits">'
+   +(u.pinErr?'<p style="color:var(--danger);margin:6px 0 0">That PIN does not match. Check with the patient.</p>':'')+btn('cDeliver','Confirm delivery')
+   +'<p class="note" style="margin-top:6px">Demo tip: the PIN is on the Patient tab.</p></div>'
+   +'<div class="card"><h5>Cannot deliver?</h5>'+btn('cFail','Patient unreachable','sec','Patient unreachable')+btn('cFail','Packaging damaged or tampered','sec','Packaging damaged or tampered')+'</div>';
+ }
+ if(o.state==='CANCELLED'||o.state==='FAILED')return h+'<div class="card"><h5>Job closed</h5><p>'+FRIENDLY[o.state]+'.</p></div>';
+ return h+'<div class="card"><h5>Delivery recorded</h5><p>Proof of delivery saved with timestamp. Status: <b>'+LABEL[o.state]+'</b>.</p></div>';
+}
+function adminV(){
+ var u=S.ui,h='',nv=S.verified.d4?0:1,nd=(S.dispute&&S.dispute.status==='open')?1:0,na=(S.amb&&['requested','acknowledged','escalated','accepted'].indexOf(S.amb.status)>=0)?1:0;
+ h+='<div class="tgl">'+[['verify','Verify'+(nv?' ('+nv+')':'')],['disputes','Disputes'+(nd?' ('+nd+')':'')],['amb','Ambulance'+(na?' ('+na+')':'')]].map(function(t){return '<button data-act="adminTab" data-arg="'+t[0]+'" aria-pressed="'+(u.admin===t[0])+'">'+t[1]+'</button>'}).join('')+'</div>';
+ if(u.admin==='verify'){
+  h+='<h4>Provider approvals</h4>';
+  h+='<div class="card"><h5>Dr. Yaw Ofori</h5><p>General practice · Accra</p>'+(S.verified.d4?'<span class="chip">Verified</span>':'<span class="chip warn">Pending</span>'+btn('approveDoc','Registration confirmed: verify doctor')+'<p class="note" style="margin-top:6px">In production, this follows a check with the Medical and Dental Council.</p>')+'</div>';
+  h+='<div class="card"><h5>Adabraka Pharmacy</h5><p>Registered pharmacy · Accra</p><span class="chip warn">Pending Pharmacy Council / NePP</span>'+btn('x','Cannot enable yet','sec','',true)+'<p class="note" style="margin-top:6px">No public pharmacy fulfilment until the required approval is confirmed.</p></div>';
+ }
+ if(u.admin==='disputes'){
+  h+='<h4>Disputes</h4>';
+  var d=S.dispute,o=S.order;
+  if(!d)h+='<div class="card"><h5>No disputes</h5><p>Patient reports appear here during the inspection window.</p></div>';
+  else{
+   h+='<div class="card"><h5>Order '+o.id+'</h5><p>Reason: <b>'+esc(d.reason)+'</b><br>Evidence on file: delivery PIN matched, courier timestamps, pharmacy dispensing record.<br>Held: '+ghs(o.med)+' medicine payout only.</p><span class="chip '+(d.status==='closed'?'':'warn')+'">'+(d.status==='open'?'Open':d.status==='refund'?'Refund pending':'Closed')+'</span>';
+   if(d.status==='open')h+=btn('resolve','Approve full refund ('+ghs(o.med)+')','','full')+btn('resolve','Approve partial refund ('+ghs(Math.round(o.med/2))+')','sec','partial')+btn('resolve','Reject and release payout','sec','reject');
+   if(d.status==='refund')h+='<p style="margin-top:8px">Waiting for provider refund confirmation…</p>';
+   if(d.status==='closed')h+='<p style="margin-top:8px">'+esc(d.result)+'</p>';
+   h+='</div>';
+  }
+ }
+ if(u.admin==='amb'){
+  h+='<h4>Ambulance dispatch</h4>';
+  var a=S.amb;
+  if(!a)h+='<div class="card"><h5>No requests</h5><p>Requests from patients appear here for a human dispatcher.</p></div>';
+  else{
+   h+='<div class="card"><h5>Request from Esi (demo)</h5><p>Location: '+esc(u.loc)+'<br>Callback: '+esc(u.cb)+'</p><span class="chip '+(a.status==='escalated'?'bad':(a.status==='accepted'||a.status==='completed'?'':'warn'))+'">'+a.status+'</span>';
+   if(a.status==='requested')h+=btn('ambAck','Acknowledge request')+btn('ambEsc','Demo: no acknowledgement in time','sec');
+   if(a.status==='escalated')h+=btn('ambAck','Dispatcher takes over: acknowledge');
+   if(a.status==='acknowledged')h+=btn('ambAccept','Partner provider accepts (ETA 12 min)');
+   if(a.status==='accepted')h+='<p style="margin-top:8px">Accepted by '+esc(a.provider)+'. Patient now sees it as confirmed.</p>'+btn('ambDone','Mark completed');
+   if(a.status==='completed')h+='<p style="margin-top:8px">Closed and recorded.</p>';
+   h+='</div>';
+  }
+ }
+ return h;
+}
+var SCREENS={patient:patient,doctor:doctorV,pharmacy:pharmacyV,courier:courierV,admin:adminV};
+
+/* ---------- ledger ---------- */
+function ledger(){
+ var o=S.order,h='<h3>Behind the scenes</h3><p class="sub">What the platform records as you click.</p><div class="journey">'+journey()+'</div>';
+ h+='<h4>Order status</h4><div class="states">';
+ if(!o)h+='<span>No order yet</span>';
+ else{
+  SEQ.forEach(function(s,i){var cls=o.reached>=i&&o.state!==s?'done':'';if(o.state===s)cls='now';if(s==='SETTLED'&&o.state==='SETTLED')cls='now';h+='<span class="'+cls+'">'+LABEL[s]+'</span>'});
+  if(['DISPUTED','REFUND_PENDING','CANCELLED','FAILED'].indexOf(o.state)>=0)h+='<span class="branch">'+LABEL[o.state]+'</span>';
+ }
+ h+='</div><h4>Where the money sits</h4><table class="m"><thead><tr><th>Item</th><th>Goes to</th><th>Amount</th><th>Status</th></tr></thead><tbody>';
+ if(S.consult){var f=S.consult.fee;h+='<tr><td>Consultation</td><td>Doctor (80%)</td><td class="n">'+ghs(f*0.8)+'</td><td>Paid</td></tr><tr><td></td><td>Platform (20%)</td><td class="n">'+ghs(f*0.2)+'</td><td>Paid</td></tr>'}
+ if(o){var p=S.pay,st=function(k,isMed){var v=p[k];if(isMed&&v==='partial')return 'Part paid out, part refunded';return {pending:'Pending conditions',held:'On hold (dispute)',settled:'Paid out',refunded:'Refunded to patient'}[v]};
+  h+='<tr><td>Medicine</td><td>Pharmacy</td><td class="n">'+ghs(o.med)+'</td><td>'+st('med',true)+'</td></tr><tr><td>Delivery</td><td>Courier</td><td class="n">'+ghs(o.del)+'</td><td>'+st('del')+'</td></tr><tr><td>Service fee</td><td>Platform</td><td class="n">'+ghs(o.fee)+'</td><td>'+st('fee')+'</td></tr>';
+ }
+ if(!S.consult&&!o)h+='<tr><td colspan="4" class="note">Nothing paid yet.</td></tr>';
+ h+='</tbody></table>';
+ if(o&&S.dispute&&S.dispute.status==='closed')h+='<p class="note" style="margin-top:8px">Contracts decide who bears the delivery fee when a medicine refund is approved. Here it is left paid out.</p>';
+ h+='<h4>Audit trail</h4><ul class="audit">';
+ if(!S.audit.length)h+='<li class="empty">Events appear here as you use the demo.</li>';
+ else S.audit.slice().reverse().forEach(function(e){h+='<li><time>'+e.t+'</time><b>'+esc(e.a)+':</b> '+esc(e.x)+'</li>'});
+ h+='</ul><button class="reset" data-act="reset">Start again</button>';
+ return h;
+}
+
+/* ---------- render ---------- */
+function render(){
+ var nh=nextHint();
+ $('#tabs').innerHTML=ROLES.map(function(r){return '<button class="tab" role="tab" data-act="role" data-arg="'+r[0]+'" aria-selected="'+(role===r[0])+'">'+r[1]+(nh.r===r[0]&&role!==r[0]?'<span class="dot" aria-label="action waiting"></span>':'')+'</button>'}).join('');
+ $('#hint').innerHTML='<b>Next:</b> '+esc(nh.t)+(nh.r!==role?'<br><button data-act="role" data-arg="'+nh.r+'">Go to '+ROLES.filter(function(r){return r[0]===nh.r})[0][1]+'</button>':'');
+ $('#apptitle').textContent=TITLES[role];
+ var sc=$('#screen'),key=role+':'+S.ui.pscr+':'+S.ui.admin,top=sc.dataset.key===key?sc.scrollTop:0;
+ sc.innerHTML=SCREENS[role]();sc.dataset.key=key;sc.scrollTop=top;
+ $('#ledger').innerHTML=ledger();
+}
+
+document.addEventListener('click',function(e){
+ var el=e.target.closest('[data-act]');if(!el||el.disabled||!S)return;
+ var fn=A[el.dataset.act];if(!fn)return;
+ fn(el.dataset.arg);
+ if(['payConsult','payOrder','cDeliver','showDispute','reason','role','jump','nav','chooseP','toCheckout','viewRx','goDoctors','bookDoc','slot','consent','phChk','ambOpen','reset','leaveCall','cancelDispute','adminTab'].indexOf(el.dataset.act)<0)render();
+});
+document.addEventListener('input',function(e){var b=e.target.dataset&&e.target.dataset.bind;if(b&&S)S.ui[b]=e.target.value});
+
+setInterval(function(){
+ if(!S)return;
+ var o=S.order;
+ if(o&&o.state==='DELIVERED_PENDING_REVIEW'){
+  o.windowLeft=Math.max(0,o.windowLeft-60);
+  var n=document.querySelectorAll('[data-cd]');for(var i=0;i<n.length;i++)n[i].textContent=cd(o.windowLeft);
+  if(o.windowLeft===0){A.settle('auto');render()}
+ }
+ var t=document.querySelector('[data-calltimer]');
+ if(t&&callStart){var s=Math.floor((Date.now()-callStart)/1000);t.textContent=(Math.floor(s/60)<10?'0':'')+Math.floor(s/60)+':'+(s%60<10?'0':'')+s%60}
+},1000);
+
+S=fresh();render();
+})();
+</script>
+</body>
+</html>
