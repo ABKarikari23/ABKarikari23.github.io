@@ -3,7 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>A More Connected Healthcare Experience for Ghana — Founder Pitch with Live Demo</title>
+<meta name="description" content="Explore Ghana HealthLink, a digital health concept connecting patients with care, prescriptions, pharmacy delivery and urgent transport in Ghana.">
+<meta name="theme-color" content="#0B3B32">
+<title>Ghana HealthLink | A More Connected Healthcare Experience</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -47,16 +49,16 @@ a{color:var(--green)}
 .hero .ctas{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:44px}
 .cta{display:inline-block;padding:13px 22px;border-radius:12px;font-weight:700;text-decoration:none;font-size:1rem}
 .cta.gold{background:var(--gold);color:#201500}
-.cta.line{border:1.5px solid #6E9A8D;color:#E8F4EF}
+.cta.outline{border:1.5px solid #6E9A8D;color:#E8F4EF}
 .facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:20px}
 .fact{border-left:3px solid var(--gold);padding-left:14px}
 .fact b{display:block;font-family:var(--display);font-size:1.35rem;font-weight:700}
 .fact span{color:#A9CBC0;font-size:.92rem}
 
 /* sections */
-.sec{padding:64px 0;border-top:1px solid var(--line)}
-.sec h2{font-size:clamp(1.7rem,3.6vw,2.4rem);margin-bottom:20px}
-.sec h3{font-size:1.2rem;margin:26px 0 8px}
+.pitch-section{padding:64px 0;border-top:1px solid var(--line)}
+.pitch-section h2{font-size:clamp(1.7rem,3.6vw,2.4rem);margin-bottom:20px}
+.pitch-section h3{font-size:1.2rem;margin:26px 0 8px}
 .lead-in{color:var(--muted)}
 .five{display:grid;gap:14px;margin:22px 0 0;padding:0;list-style:none;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
 .five li{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px}
@@ -93,7 +95,7 @@ a{color:var(--green)}
 .card p{margin:0 0 8px;color:var(--muted);font-size:.9rem}
 .card p:last-child{margin-bottom:0}
 .btn{display:block;width:100%;padding:11px 14px;border-radius:12px;border:0;background:var(--green);color:var(--green-ink);font:600 .94rem var(--body);cursor:pointer;margin-top:8px;text-align:center}
-.btn.sec{background:transparent;color:var(--green);border:1.5px solid var(--green)}
+.btn.secondary{background:transparent;color:var(--green);border:1.5px solid var(--green)}
 .btn.danger{background:var(--danger);color:#fff}
 .btn.sm{width:auto;padding:7px 12px;margin:0;font-size:.85rem}
 .btn:disabled{opacity:.45;cursor:not-allowed}
@@ -187,28 +189,194 @@ ul.plain li{margin-bottom:8px}
 .close p{max-width:62ch;color:#CFE4DC}
 .close a{color:var(--gold)}
 .fine{font-size:.85rem;color:var(--muted);padding:26px 0 40px}
+
+/* visual polish */
+.hero{background:radial-gradient(ellipse at 82% 42%,rgba(61,190,156,.18),transparent 34%),linear-gradient(135deg,#092F29 0%,#0B3B32 54%,#10483D 100%);overflow:hidden}
+.hero .wrap{max-width:1200px}
+.hero-top{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:8px 0 0}
+.brand{display:inline-flex;align-items:center;gap:10px;color:#F2F8F5;text-decoration:none;font-family:var(--display);font-size:1.1rem;letter-spacing:-.02em}
+.brand b{font-weight:700;color:#A9DBC9}
+.brand-mark{display:grid;place-items:center;width:34px;height:34px;border:1px solid rgba(204,239,222,.34);border-radius:11px;background:rgba(224,249,237,.1);color:#D6F0E4;font:600 1.55rem/1 var(--body)}
+.hero-nav{display:flex;align-items:center;gap:28px}
+.hero-nav a{color:#C2DCD1;text-decoration:none;font-size:.9rem;font-weight:600;transition:color .18s}
+.hero-nav a:hover{color:#fff}
+.hero-main{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(360px,.92fr);align-items:center;gap:48px;padding:58px 0 32px}
+.hero-copy{max-width:650px}
+.hero .tag{display:inline-flex;align-items:center;gap:9px;margin:0 0 22px;padding:7px 12px;border:1px solid rgba(198,231,215,.2);border-radius:999px;background:rgba(224,249,237,.07);color:#C6E0D4;font-size:.78rem;font-weight:600;letter-spacing:.035em}
+.tag-dot,.preview-pulse{width:8px;height:8px;border-radius:50%;background:#8DD4B4;box-shadow:0 0 0 4px rgba(141,212,180,.13)}
+.hero h1{max-width:14ch;font-size:clamp(2.8rem,5vw,4.7rem);line-height:1.04;letter-spacing:-.045em}
+.hero .lede{max-width:54ch;margin:22px 0 28px;color:#C6DED4;font-size:1.12rem;line-height:1.7}
+.hero .ctas{gap:12px;margin-bottom:32px}
+.cta{transition:transform .18s,box-shadow .18s,background .18s}
+.cta:hover{transform:translateY(-2px);box-shadow:0 9px 22px rgba(0,0,0,.18)}
+.cta.gold{background:#E9B23B}
+.cta.outline{display:inline-flex;align-items:center;justify-content:center;min-height:50px;padding:12px 19px;border:1px solid rgba(211,236,224,.35);border-radius:12px;color:#E8F4EF;text-decoration:none;font-weight:700}
+.cta.gold span{margin-left:8px;font-size:1.15em}
+.facts{grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.fact{min-height:72px;padding:10px 12px;border:1px solid rgba(196,226,210,.14);border-left:2px solid #E9B23B;border-radius:0 10px 10px 0;background:rgba(224,249,237,.045)}
+.fact b{font-size:1rem}
+.fact span{display:block;margin-top:3px;color:#AFC9BD;font-size:.78rem;line-height:1.4}
+.hero-visual{position:relative;display:grid;place-items:center;min-height:360px;isolation:isolate}
+.visual-orbit{position:absolute;z-index:-1;border:1px solid rgba(177,224,201,.13);border-radius:50%}
+.orbit-one{width:390px;height:390px}
+.orbit-two{width:300px;height:300px}
+.orbit-dot{top:48px;right:24px;width:11px;height:11px;border:0;background:#E9B23B;box-shadow:0 0 0 8px rgba(233,178,59,.12)}
+.preview-card{position:relative;width:min(100%,410px);padding:22px;border:1px solid rgba(220,241,228,.65);border-radius:22px;background:linear-gradient(145deg,#fff 0%,#F5FAF7 100%);box-shadow:0 28px 80px rgba(0,20,16,.3);color:#12302A;transform:rotate(1deg)}
+.preview-head{display:flex;align-items:center;gap:12px;padding-bottom:18px;border-bottom:1px solid #E1EBE5}
+.preview-mark{display:grid;place-items:center;width:42px;height:42px;border-radius:14px;background:#E3EFEA;color:#0E6B57;font:600 1.8rem/1 var(--body)}
+.preview-heading{display:grid;gap:3px;flex:1}
+.preview-heading b{font-family:var(--display);font-size:1rem}
+.preview-heading small,.preview-step-copy small{color:#60776F;font-size:.76rem}
+.preview-label{padding:5px 8px;border-radius:999px;background:#E6F1EB;color:#246B56;font-size:.62rem;font-weight:700;letter-spacing:.08em}
+.preview-route{padding:8px 0}
+.preview-step{position:relative;display:flex;align-items:center;gap:12px;padding:13px 2px}
+.preview-step:not(:last-child)::after{position:absolute;top:44px;bottom:-2px;left:19px;width:1px;background:#D8E7DF;content:""}
+.preview-number{z-index:1;display:grid;place-items:center;width:38px;height:38px;flex:none;border:1px solid #D6E7DE;border-radius:12px;background:#F4F8F6;color:#28755D;font-size:.75rem;font-weight:700}
+.preview-step-copy{display:grid;gap:3px;flex:1}
+.preview-step-copy b{font-size:.88rem}
+.preview-check{display:grid;place-items:center;width:22px;height:22px;border-radius:50%;background:#E1F1E8;color:#28755D;font-size:.75rem;font-weight:700}
+.preview-foot{display:flex;align-items:center;gap:9px;padding-top:15px;border-top:1px solid #E1EBE5;color:#45685B;font-size:.74rem;font-weight:600}
+.preview-foot span:last-child{margin-left:auto;color:#71867D;font-size:.68rem;font-weight:500}
+.preview-pulse{width:7px;height:7px;flex:none;background:#4A9D78;box-shadow:0 0 0 3px rgba(74,157,120,.12)}
+.pitch-section{padding:76px 0}
+.pitch-section h2,.demo-sec h2,.close h2{letter-spacing:-.025em}
+.pitch-section .prose>p:first-child{color:var(--muted)}
+.five{gap:16px}
+.five li{min-height:126px;padding:20px;border-radius:16px;box-shadow:0 3px 12px rgba(18,48,42,.035);transition:transform .2s,box-shadow .2s}
+.five li:hover{transform:translateY(-3px);box-shadow:0 12px 28px rgba(18,48,42,.08)}
+.steps{gap:12px}
+.steps li{border-radius:16px;transition:border-color .18s,box-shadow .18s}
+.steps li:hover{border-color:color-mix(in srgb,var(--green) 35%,var(--line));box-shadow:0 6px 18px rgba(18,48,42,.055)}
+.demo-sec{padding:76px 0;background:linear-gradient(180deg,var(--soft),var(--bg))}
+.demo-grid{gap:44px}
+.hint,.ledger{box-shadow:0 10px 30px rgba(18,48,42,.055)}
+.phone{border-radius:34px;box-shadow:0 24px 54px rgba(6,30,24,.24)}
+.ledger{position:sticky;top:20px;border-radius:20px}
+.card{border-radius:15px}
+.btn,.try,.slot,.reset,.hint button{transition:transform .16s,box-shadow .16s,filter .16s}
+.btn:not(:disabled):hover,.try:hover,.slot:hover,.reset:hover,.hint button:hover{transform:translateY(-1px);box-shadow:0 5px 13px rgba(18,48,42,.12)}
+.btn:focus-visible,.try:focus-visible,.slot:focus-visible,.tab:focus-visible,.reset:focus-visible,.hint button:focus-visible,.cta:focus-visible,.hero-nav a:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.close{background:radial-gradient(ellipse at 90% 30%,rgba(61,190,156,.14),transparent 36%),var(--deep)}
+.fine{border-top:1px solid var(--line)}
+@media (max-width:920px){
+  .hero-main{grid-template-columns:minmax(0,1fr) minmax(300px,.85fr);gap:26px}
+  .hero h1{font-size:clamp(2.6rem,6vw,4rem)}
+  .facts{grid-template-columns:1fr}
+  .fact{min-height:auto}
+  .demo-grid{gap:28px}
+  .ledger{position:static}
+}
+@media (max-width:700px){
+  .hero{padding-bottom:44px}
+  .hero-main{grid-template-columns:1fr;gap:26px;padding:48px 0 0}
+  .hero-copy{max-width:600px}
+  .hero-visual{min-height:330px}
+  .hero h1{max-width:15ch}
+  .facts{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .fact{padding:9px}
+  .fact b{font-size:.88rem}
+  .fact span{font-size:.72rem}
+  .pitch-section,.demo-sec{padding:56px 0}
+}
+@media (max-width:520px){
+  body{font-size:16px}
+  .wrap{padding-right:18px;padding-left:18px}
+  .hero-top{padding-top:0}
+  .brand{font-size:1rem}
+  .hero-nav{gap:14px}
+  .hero-nav a{font-size:.78rem}
+  .hero-nav a:not(:last-child){display:none}
+  .hero-main{padding-top:40px}
+  .hero h1{font-size:clamp(2.45rem,12vw,3.45rem)}
+  .hero .lede{font-size:1rem}
+  .hero .ctas{align-items:stretch}
+  .cta{padding:12px 15px;font-size:.9rem}
+  .cta.outline{min-height:46px;padding:10px 14px}
+  .facts{grid-template-columns:1fr;gap:8px}
+  .fact{display:flex;align-items:center;justify-content:space-between;gap:12px}
+  .fact span{text-align:right}
+  .hero-visual{min-height:300px}
+  .orbit-one{width:310px;height:310px}
+  .orbit-two{width:240px;height:240px}
+  .preview-card{padding:17px;border-radius:18px}
+  .preview-foot{font-size:.68rem}
+  .preview-foot span:last-child{font-size:.61rem}
+  .pitch-section h2,.demo-sec h2,.close h2{font-size:1.8rem}
+  .steps li{grid-template-columns:38px 1fr;gap:10px;padding:14px}
+  .steps .n{width:38px;height:38px}
+  .try{grid-column:2}
+  .ledger{padding:17px}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+}
 </style>
 </head>
 <body>
 
-<header class="hero">
+<header class="hero" id="top">
   <div class="wrap">
-    <p class="tag">Founder pitch for Ghana &middot; Confidential discussion document &middot; Working concept</p>
-    <h1>A more connected healthcare experience for Ghana</h1>
-    <p class="lede">One platform that connects patients, licensed doctors, registered pharmacies, delivery partners and ambulance providers. This version of my pitch comes with a working prototype, so you can click through the whole journey yourself.</p>
-    <div class="ctas">
-      <a class="cta gold" href="#demo">Try the live demo</a>
-      <a class="cta line" href="#why">Read the pitch</a>
+    <div class="hero-top">
+      <a class="brand" href="#top" aria-label="Ghana HealthLink home">
+        <span class="brand-mark" aria-hidden="true">+</span>
+        <span>Ghana <b>HealthLink</b></span>
+      </a>
+      <nav class="hero-nav" aria-label="Main navigation">
+        <a href="#why">The vision</a>
+        <a href="#solution">How it works</a>
+        <a href="#contact">Contact</a>
+      </nav>
     </div>
-    <div class="facts">
-      <div class="fact"><b>Accra and Kumasi</b><span>Defined pilot service areas</span></div>
-      <div class="fact"><b>Android-first</b><span>Mobile access for patients and providers</span></div>
-      <div class="fact"><b>GHS 60,000–150,000</b><span>Indicative development range</span></div>
+    <div class="hero-main">
+      <div class="hero-copy">
+        <p class="tag"><span class="tag-dot" aria-hidden="true"></span>Digital health concept <span aria-hidden="true">&middot;</span> Ghana</p>
+        <h1>A more connected healthcare experience for Ghana</h1>
+        <p class="lede">A thoughtful concept for connecting patients with care, prescriptions, pharmacy delivery and urgent transport — in one clearer journey.</p>
+        <div class="ctas">
+          <a class="cta gold" href="#demo">Explore the interactive demo <span aria-hidden="true">&rarr;</span></a>
+          <a class="cta outline" href="#why">Discover the vision</a>
+        </div>
+        <div class="facts">
+          <div class="fact"><b>Accra &amp; Kumasi</b><span>Proposed pilot cities</span></div>
+          <div class="fact"><b>Android-first</b><span>Designed for mobile access</span></div>
+          <div class="fact"><b>Built responsibly</b><span>Provider-led, phased rollout</span></div>
+        </div>
+      </div>
+      <aside class="hero-visual" aria-label="Illustration of a connected care journey">
+        <div class="visual-orbit orbit-one" aria-hidden="true"></div>
+        <div class="visual-orbit orbit-two" aria-hidden="true"></div>
+        <div class="preview-card">
+          <div class="preview-head">
+            <span class="preview-mark" aria-hidden="true">+</span>
+            <span class="preview-heading"><b>One connected journey</b><small>Designed around the patient</small></span>
+            <span class="preview-label">CONCEPT</span>
+          </div>
+          <div class="preview-route">
+            <div class="preview-step">
+              <span class="preview-number">01</span>
+              <span class="preview-step-copy"><b>Connect with care</b><small>Find a suitable clinician</small></span>
+              <span class="preview-check" aria-hidden="true">&check;</span>
+            </div>
+            <div class="preview-step">
+              <span class="preview-number">02</span>
+              <span class="preview-step-copy"><b>Coordinate treatment</b><small>Consultation and prescription</small></span>
+              <span class="preview-check" aria-hidden="true">&check;</span>
+            </div>
+            <div class="preview-step">
+              <span class="preview-number">03</span>
+              <span class="preview-step-copy"><b>Follow through</b><small>Pharmacy and delivery journey</small></span>
+              <span class="preview-check" aria-hidden="true">&check;</span>
+            </div>
+          </div>
+          <div class="preview-foot"><span class="preview-pulse" aria-hidden="true"></span>Interactive concept prototype <span>Fictional demo data</span></div>
+        </div>
+        <span class="visual-orbit orbit-dot" aria-hidden="true"></span>
+      </aside>
     </div>
   </div>
 </header>
 
-<section class="sec" id="why">
+<section class="pitch-section" id="why">
   <div class="wrap">
     <h2>Why I am building this</h2>
     <div class="prose">
@@ -250,7 +418,7 @@ ul.plain li{margin-bottom:8px}
   </div>
 </section>
 
-<section class="sec" id="solution">
+<section class="pitch-section" id="solution">
   <div class="wrap">
     <h2>How the platform works</h2>
     <div class="prose">
@@ -270,7 +438,7 @@ ul.plain li{margin-bottom:8px}
   </div>
 </section>
 
-<section class="sec" id="trust">
+<section class="pitch-section" id="trust">
   <div class="wrap">
     <h2>A trust-centred payment protection model</h2>
     <div class="prose">
@@ -287,7 +455,7 @@ ul.plain li{margin-bottom:8px}
   </div>
 </section>
 
-<section class="sec" id="proves">
+<section class="pitch-section" id="proves">
   <div class="wrap">
     <h2>What the prototype shows, and what it does not</h2>
     <div class="two">
@@ -316,7 +484,7 @@ ul.plain li{margin-bottom:8px}
   </div>
 </section>
 
-<section class="sec" id="money">
+<section class="pitch-section" id="money">
   <div class="wrap">
     <h2>How the business can earn revenue</h2>
     <div class="prose">
@@ -333,7 +501,7 @@ ul.plain li{margin-bottom:8px}
   </div>
 </section>
 
-<section class="sec" id="rollout">
+<section class="pitch-section" id="rollout">
   <div class="wrap">
     <h2>Initial market and rollout</h2>
     <div class="prose">
@@ -356,7 +524,7 @@ ul.plain li{margin-bottom:8px}
   </div>
 </section>
 
-<section class="sec" id="budget">
+<section class="pitch-section" id="budget">
   <div class="wrap">
     <h2>Development budget</h2>
     <div class="prose">
@@ -384,7 +552,7 @@ ul.plain li{margin-bottom:8px}
   </div>
 </section>
 
-<section class="sec" id="responsible">
+<section class="pitch-section" id="responsible">
   <div class="wrap">
     <h2>Responsible implementation</h2>
     <div class="prose">
@@ -401,7 +569,7 @@ ul.plain li{margin-bottom:8px}
   </div>
 </section>
 
-<section class="sec" id="ask">
+<section class="pitch-section" id="ask">
   <div class="wrap">
     <h2>What I am looking for</h2>
     <div class="prose">
@@ -635,7 +803,7 @@ function nextHint(){
 /* ---------- screens ---------- */
 function patient(){
  var u=S.ui,c=S.consult,o=S.order,a=S.amb,h='';
- var back=function(t,to){return '<div class="row" style="margin-bottom:8px"><button class="btn sec sm" data-act="nav" data-arg="'+to+'">Back</button><span class="note">'+t+'</span></div>'};
+ var back=function(t,to){return '<div class="row" style="margin-bottom:8px"><button class="btn secondary sm" data-act="nav" data-arg="'+to+'">Back</button><span class="note">'+t+'</span></div>'};
  if(u.pscr==='home'){
   h+='<div class="emerg"><div><b>Emergency?</b><span>Always available. No account or payment needed.</span></div><button class="btn danger sm" data-act="callEm">Call now</button></div>';
   h+='<h4>Hello, Esi</h4>';
@@ -647,8 +815,8 @@ function patient(){
    if(c.status==='done'&&c.outcome==='rx'&&!o)h+='<div class="card"><h5>Prescription ready</h5><p>Issued by '+esc(d.name)+'. Choose a pharmacy to continue.</p>'+btn('viewRx','View prescription')+'</div>';
    if(c.status==='done'&&c.outcome==='referral')h+='<div class="card"><h5>Referred to in-person care</h5><p>'+esc(d.name)+' advised you to be seen in person. No medicine order is needed.</p></div>';
   }
-  if(o)h+='<div class="card"><h5>Pharmacy order</h5><p>'+FRIENDLY[o.state]+'</p>'+btn('nav','Track order','sec','track')+'</div>';
-  h+='<div class="card"><h5>Need an ambulance?</h5>'+(a?'<p>Request status: <b>'+a.status+'</b></p>':'<p>Send a request to verified partner providers. Not a replacement for calling emergency services.</p>')+btn('ambOpen',a?'View request':'Request an ambulance','sec')+'</div>';
+  if(o)h+='<div class="card"><h5>Pharmacy order</h5><p>'+FRIENDLY[o.state]+'</p>'+btn('nav','Track order','secondary','track')+'</div>';
+  h+='<div class="card"><h5>Need an ambulance?</h5>'+(a?'<p>Request status: <b>'+a.status+'</b></p>':'<p>Send a request to verified partner providers. Not a replacement for calling emergency services.</p>')+btn('ambOpen',a?'View request':'Request an ambulance','secondary')+'</div>';
  }
  if(u.pscr==='doctors'){
   h+=back('Doctors near you (fictional)','home')+'<h4>Choose a doctor</h4>';
@@ -656,7 +824,7 @@ function patient(){
    var ver=isVerified(d),un=S.unavail[d.id],ok=ver&&!un;
    h+='<div class="card"><div class="row" style="justify-content:flex-start"><div class="avatar">'+d.init+'</div><div><h5>'+d.name+'</h5><p style="margin:0">'+d.spec+' · '+d.zone+' · '+ghs(d.fee)+'</p></div></div>'
     +'<div style="margin-top:8px">'+(ver?'<span class="chip">Verified</span> ':'<span class="chip warn">Verification pending</span> ')+(un?'<span class="chip bad">Unavailable now</span>':'')+'</div>'
-    +btn('bookDoc',ver?(un?'Unavailable':'Book'):'Cannot be booked yet',ok?'':'sec',d.id,!ok)+'</div>';
+    +btn('bookDoc',ver?(un?'Unavailable':'Book'):'Cannot be booked yet',ok?'':'secondary',d.id,!ok)+'</div>';
   });
   h+='<p class="note">Unverified clinicians cannot take paid consultations. Try approving Dr. Yaw Ofori in the Admin tab.</p>';
  }
@@ -672,7 +840,7 @@ function patient(){
   var d=doc(c.doc);
   h+='<div class="vid"><span class="rec">'+(u.weak?'Audio only':'Video')+' · <span data-calltimer>00:00</span></span><div><div class="avatar">'+d.init+'</div>'+esc(d.name)+'<br><span class="note" style="color:#A9CBC0">'+(u.weak?'Weak connection. Switched to audio.':'Connected')+'</span></div><div class="me">You</div></div>'
    +'<div class="bubble">Hello Esi, thanks for joining. What would you like to talk about today?</div>'
-   +(u.weak?'':btn('weak','Simulate a weak connection','sec'))
+   +(u.weak?'':btn('weak','Simulate a weak connection','secondary'))
    +btn('leaveCall','Leave call','danger')
    +'<p class="note" style="margin-top:8px">The doctor finishes the consultation from the Doctor tab. The demo skips real video.</p>';
  }
@@ -701,9 +869,9 @@ function patient(){
    h+='<div class="card"><h5>Check your order</h5><p>Inspection window: <b data-cd>'+cd(o.windowLeft)+'</b> left (demo clock runs 60x faster).</p>';
    if(u.showDispute){
     h+='<label class="f">What went wrong?</label><div class="tgl" style="flex-wrap:wrap">'+['Missing item','Wrong item','Damaged item'].map(function(r){return '<button data-act="reason" data-arg="'+r+'" aria-pressed="'+(u.reason===r)+'">'+r+'</button>'}).join('')+'</div>'
-     +btn('openDispute','Submit report','danger','',!u.reason)+btn('cancelDispute','Cancel','sec');
+     +btn('openDispute','Submit report','danger','',!u.reason)+btn('cancelDispute','Cancel','secondary');
    }else{
-    h+=btn('confirm','Everything is correct: confirm receipt')+btn('showDispute','Report a problem','sec')+btn('ff','Demo: skip to end of window','sec');
+    h+=btn('confirm','Everything is correct: confirm receipt')+btn('showDispute','Report a problem','secondary')+btn('ff','Demo: skip to end of window','secondary');
    }
    h+='</div>';
   }
@@ -712,7 +880,7 @@ function patient(){
    var msg={settled:'Order complete. Payout released to the pharmacy.',refunded:'Order complete. Refund of '+ghs(o.refund)+' issued for the medicine.',partial:'Order complete. Partial refund of '+ghs(o.refund)+' issued.',cancelled:'',failed:''}[o.final];
    if(msg)h+='<div class="card"><h5>'+msg+'</h5>'+(S.dispute&&S.dispute.result?'<p>'+esc(S.dispute.result)+'</p>':'')+'</div>';
   }
-  h+=btn('safety','Report a medicine safety concern','sec')+'<p class="note" style="margin-top:6px">Counterfeit medicine or a side effect? This route is always open.</p>';
+  h+=btn('safety','Report a medicine safety concern','secondary')+'<p class="note" style="margin-top:6px">Counterfeit medicine or a side effect? This route is always open.</p>';
  }
  if(u.pscr==='amb'){
   h+=back('Ambulance request','home')+'<div class="emerg"><div><b>In danger now?</b><span>Call emergency services directly.</span></div><button class="btn danger sm" data-act="callEm">Call now</button></div>';
@@ -740,7 +908,7 @@ function doctorV(){
   var items=MEDS;
   h+='<div class="card"><h5>Consultation with Esi</h5>'+(c.joined?'<span class="chip">Patient has joined</span>':'<span class="chip warn">Waiting for patient to join</span>')+'<label class="f" for="note">Clinical note (required)</label><textarea id="note" data-bind="note" placeholder="Record what was discussed and advised">'+esc(u.note)+'</textarea></div>'
    +'<div class="card"><h5>Prescription (only if justified)</h5>'+items.map(function(m){return '<label class="chkrow"><input type="checkbox" data-act="dmed" data-arg="'+m.id+'" '+(u.docMeds[m.id]?'checked':'')+'><span>'+m.name+'</span></label>'}).join('')
-   +btn('issueRx','Sign and issue prescription','',' ',!c.joined)+btn('refer','Refer to in-person care instead','sec','',!c.joined)+'<p class="note" style="margin-top:6px">In the demo, save your note by typing it before pressing a button. Severe symptoms should always be advised to seek urgent help.</p></div>';
+   +btn('issueRx','Sign and issue prescription','',' ',!c.joined)+btn('refer','Refer to in-person care instead','secondary','',!c.joined)+'<p class="note" style="margin-top:6px">In the demo, save your note by typing it before pressing a button. Severe symptoms should always be advised to seek urgent help.</p></div>';
  }
  if(c.status==='done')h+='<div class="card"><h5>Consultation closed</h5><p>'+(c.outcome==='rx'?'Prescription issued and linked to the encounter.':'Patient referred to in-person care.')+'</p><span class="chip">Record saved</span></div>';
  return h;
@@ -774,7 +942,7 @@ function courierV(){
   return h+'<div class="card"><h5>Hand over the order</h5><p>Ask the patient for their 4-digit PIN. Do not hand over without it.</p><label class="f" for="pininput">Order PIN</label><input type="text" inputmode="numeric" maxlength="4" id="pininput" value="'+esc(u.pin)+'" placeholder="4 digits">'
    +(u.pinErr?'<p style="color:var(--danger);margin:6px 0 0">That PIN does not match. Check with the patient.</p>':'')+btn('cDeliver','Confirm delivery')
    +'<p class="note" style="margin-top:6px">Demo tip: the PIN is on the Patient tab.</p></div>'
-   +'<div class="card"><h5>Cannot deliver?</h5>'+btn('cFail','Patient unreachable','sec','Patient unreachable')+btn('cFail','Packaging damaged or tampered','sec','Packaging damaged or tampered')+'</div>';
+   +'<div class="card"><h5>Cannot deliver?</h5>'+btn('cFail','Patient unreachable','secondary','Patient unreachable')+btn('cFail','Packaging damaged or tampered','secondary','Packaging damaged or tampered')+'</div>';
  }
  if(o.state==='CANCELLED'||o.state==='FAILED')return h+'<div class="card"><h5>Job closed</h5><p>'+FRIENDLY[o.state]+'.</p></div>';
  return h+'<div class="card"><h5>Delivery recorded</h5><p>Proof of delivery saved with timestamp. Status: <b>'+LABEL[o.state]+'</b>.</p></div>';
@@ -785,7 +953,7 @@ function adminV(){
  if(u.admin==='verify'){
   h+='<h4>Provider approvals</h4>';
   h+='<div class="card"><h5>Dr. Yaw Ofori</h5><p>General practice · Accra</p>'+(S.verified.d4?'<span class="chip">Verified</span>':'<span class="chip warn">Pending</span>'+btn('approveDoc','Registration confirmed: verify doctor')+'<p class="note" style="margin-top:6px">In production, this follows a check with the Medical and Dental Council.</p>')+'</div>';
-  h+='<div class="card"><h5>Adabraka Pharmacy</h5><p>Registered pharmacy · Accra</p><span class="chip warn">Pending Pharmacy Council / NePP</span>'+btn('x','Cannot enable yet','sec','',true)+'<p class="note" style="margin-top:6px">No public pharmacy fulfilment until the required approval is confirmed.</p></div>';
+  h+='<div class="card"><h5>Adabraka Pharmacy</h5><p>Registered pharmacy · Accra</p><span class="chip warn">Pending Pharmacy Council / NePP</span>'+btn('x','Cannot enable yet','secondary','',true)+'<p class="note" style="margin-top:6px">No public pharmacy fulfilment until the required approval is confirmed.</p></div>';
  }
  if(u.admin==='disputes'){
   h+='<h4>Disputes</h4>';
@@ -793,7 +961,7 @@ function adminV(){
   if(!d)h+='<div class="card"><h5>No disputes</h5><p>Patient reports appear here during the inspection window.</p></div>';
   else{
    h+='<div class="card"><h5>Order '+o.id+'</h5><p>Reason: <b>'+esc(d.reason)+'</b><br>Evidence on file: delivery PIN matched, courier timestamps, pharmacy dispensing record.<br>Held: '+ghs(o.med)+' medicine payout only.</p><span class="chip '+(d.status==='closed'?'':'warn')+'">'+(d.status==='open'?'Open':d.status==='refund'?'Refund pending':'Closed')+'</span>';
-   if(d.status==='open')h+=btn('resolve','Approve full refund ('+ghs(o.med)+')','','full')+btn('resolve','Approve partial refund ('+ghs(Math.round(o.med/2))+')','sec','partial')+btn('resolve','Reject and release payout','sec','reject');
+   if(d.status==='open')h+=btn('resolve','Approve full refund ('+ghs(o.med)+')','','full')+btn('resolve','Approve partial refund ('+ghs(Math.round(o.med/2))+')','secondary','partial')+btn('resolve','Reject and release payout','secondary','reject');
    if(d.status==='refund')h+='<p style="margin-top:8px">Waiting for provider refund confirmation…</p>';
    if(d.status==='closed')h+='<p style="margin-top:8px">'+esc(d.result)+'</p>';
    h+='</div>';
@@ -805,7 +973,7 @@ function adminV(){
   if(!a)h+='<div class="card"><h5>No requests</h5><p>Requests from patients appear here for a human dispatcher.</p></div>';
   else{
    h+='<div class="card"><h5>Request from Esi (demo)</h5><p>Location: '+esc(u.loc)+'<br>Callback: '+esc(u.cb)+'</p><span class="chip '+(a.status==='escalated'?'bad':(a.status==='accepted'||a.status==='completed'?'':'warn'))+'">'+a.status+'</span>';
-   if(a.status==='requested')h+=btn('ambAck','Acknowledge request')+btn('ambEsc','Demo: no acknowledgement in time','sec');
+   if(a.status==='requested')h+=btn('ambAck','Acknowledge request')+btn('ambEsc','Demo: no acknowledgement in time','secondary');
    if(a.status==='escalated')h+=btn('ambAck','Dispatcher takes over: acknowledge');
    if(a.status==='acknowledged')h+=btn('ambAccept','Partner provider accepts (ETA 12 min)');
    if(a.status==='accepted')h+='<p style="margin-top:8px">Accepted by '+esc(a.provider)+'. Patient now sees it as confirmed.</p>'+btn('ambDone','Mark completed');
